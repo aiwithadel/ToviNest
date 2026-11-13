@@ -1,0 +1,37 @@
+{
+  "brand": "Tovi Nest",
+  "tagline": "Soft, Secure Space for Little Explorers",
+  "essence": {
+    "headline": "Little explorer. Big heart.",
+    "description": "Curious, kind and playful. Always ready for an adventure and to make new friends."
+  },
+  "palette": {
+    "sage_green":    { "hex": "#7A8F6A", "rgb": [122, 143, 106], "role": "primary / 'T' and 't' in logo, mascot body family" },
+    "muted_sky_blue":{ "hex": "#7AA3BD", "rgb": [122, 163, 189], "role": "accent / 'o' and 'e' in logo" },
+    "warm_coral":    { "hex": "#E07A5F", "rgb": [224, 122, 95],  "role": "accent / 'v' and 'n' in logo" },
+    "mustard_yellow":{ "hex": "#E9B041", "rgb": [233, 176, 65],  "role": "accent / 'i' and 'N' in logo" },
+    "soft_blush_pink":{ "hex": "#E9A6A1", "rgb": [233, 166, 161], "role": "accent / 's', heart, cheeks" },
+    "light_cream":   { "hex": "#FFF4E6", "rgb": [255, 244, 230], "role": "preferred background" },
+    "warm_brown":    { "hex": "#6E4A2B", "rgb": [110, 74, 43],   "role": "body text / headings on cream" }
+  },
+  "fonts": {
+    "_note": "The brand guidelines do not name typefaces. These are closest-match Google Fonts suggestions for the rounded, playful style — confirm or replace with the original fonts if you have them.",
+    "logo_display": { "family": "Fredoka", "weight": 600, "source": "https://fonts.google.com/specimen/Fredoka", "status": "suggested match" },
+    "headings":     { "family": "Fredoka", "weight": 500, "letter_spacing": "0.08em uppercase for section labels", "status": "suggested match" },
+    "body":         { "family": "Nunito",  "weight": 400, "source": "https://fonts.google.com/specimen/Nunito", "status": "suggested match" }
+  },
+  "mascot": {
+    "type": "baby dinosaur plush",
+    "details": ["soft rounded spikes", "rosy cheeks", "cream belly", "orange scarf", "leaf spots", "warm light-green body"]
+  },
+  "logo_rules": {
+    "do": ["Use consistent colors", "Keep rounded playful typography", "Use soft cream backgrounds when possible", "Maintain clear space around the logo"],
+    "dont": ["Recolor the mascot", "Stretch, rotate, or distort the logo"]
+  },
+  "assets": {
+    "primary_logo": "tovinest-primary-logo.png",
+    "badge": "tovinest-badge-tn.png",
+    "mascot": "tovinest-mascot.png",
+    "guidelines": "tovinest-brand-guidelines.png"
+  }
+}
