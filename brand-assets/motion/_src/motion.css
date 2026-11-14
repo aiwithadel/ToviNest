@@ -27,3 +27,16 @@
 @keyframes swingIn { from { opacity: 0; transform: rotate(-18deg) scale(.8) } to { opacity: 1; transform: none } }
 @keyframes zoomOut { from { transform: scale(1.12) } to { transform: scale(1) } }
 @keyframes shine { from { transform: translateX(-120%) skewX(-20deg) } to { transform: translateX(220%) skewX(-20deg) } }
+
+/* ---- v2: safe-zone layout ---- */
+.safe { position: absolute; left: 40px; top: 320px; width: 860px; height: 1080px; z-index: 2; }
+.scene2 { position: absolute; inset: 0; }
+.foot { position: absolute; left: 0; right: 0; bottom: 0; height: 48px; display: flex; justify-content: space-between; align-items: center; }
+.foot .lockup { gap: 10px; }
+.foot .lockup img { width: 46px; height: 46px; }
+.safe .big { text-align: center; }
+.safe .callout .n { flex: none; }
+@keyframes rise { from { opacity: 0; transform: translateY(24px) } to { opacity: 1; transform: none } }
+@keyframes popIn { from { opacity: 0; transform: scale(.72) } to { opacity: 1; transform: none } }
+@keyframes fadeOut { from { opacity: 1 } to { opacity: 0 } }
+@keyframes fly2 { from { opacity: 0; transform: translate(var(--dx), var(--dy)) rotate(var(--r)) scale(.7) } to { opacity: 1; transform: none } }
