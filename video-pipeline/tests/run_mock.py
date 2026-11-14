@@ -40,7 +40,46 @@ for n, dur in [("vo1_box", 14), ("vo2_nest", 13)]:
     subprocess.check_call(["ffmpeg", "-y", "-v", "error", "-f", "lavfi", "-i", f"sine=f=220:d={dur}", "-af", "volume=0.05", f"{B}/audio/{n}.mp3"])
 subprocess.check_call([sys.executable, f"{BA}/motion/_src/music.py", "20", f"{B}/audio/music_upbeat.wav"])
 subprocess.check_call(["ffmpeg", "-y", "-v", "error", "-i", f"{B}/audio/music_upbeat.wav", f"{B}/audio/music_upbeat.mp3"])
-env = dict(os.environ, PYTHONPATH=f"{HERE}/mock:{VP}")
-for s, out in [("v01.py", "/workspace/content-v2/posts/01/01_dino_got_a_delivery.mp4"), ("v02.py", "/workspace/content-v2/posts/02/02_dinos_new_nest.mp4")]:
-    print("==", s); subprocess.check_call([sys.executable, f"{VP}/{s}"], env=env, cwd=VP)
-    subprocess.check_call([sys.executable, f"{VP}/qa_contact.py", out, "--out", f"/tmp/tovimock/_qa/{s[:3]}"], env=env)
+# extra assets for v03 / v04 / vprod
+for d in ["/workspace/tiktok-upload", "/workspace/brand", "/workspace/content-v2/posts/dino-falls-01"]:
+    os.makedirs(d, exist_ok=True)
+Image.new("RGB", (1080, 1920), (186, 64, 58)).save(f"{B}/ai/bg_xmas_flux.png")
+mat.save(f"{B}/assets/mat_ash-starlight.png")
+for n in ["packaging-ash-starlight", "packaging-rainboho"]:
+    box.convert("RGB").save(f"/workspace/tiktok-upload/{n}.jpg")
+for n in ["ash-starlight-2-lifestyle", "ash-starlight-5-toddler", "ash-starlight-3-dimensions", "rainboho-5-toddler"]:
+    life.save(f"/workspace/playmat/final/{n}.png")
+Image.open(f"{BA}/carousels/_src/img/box-rainboho.jpg").save("/workspace/brand/IMG_6269.jpeg")
+VO3 = ("Tummy time, crawling, big wobbly first steps, Dino tested it all. Half an inch of soft EVA, "
+       "wipe clean and waterproof. Approved by Dino.")
+VO4 = "Looking for a baby gift? Dino picked the playmat. RainBoho or Ash Starlight, two mats for eighty nine ninety nine, on our TikTok shop."
+w = json.load(open(f"{B}/audio/words.json")); w.update({"vo3_crawl": words(VO3, .4, .36), "vo4_gift": words(VO4, .3, .38)})
+json.dump(w, open(f"{B}/audio/words.json", "w"))
+for n, dur in [("vo3_crawl", 12), ("vo4_gift", 13)]:
+    subprocess.check_call(["ffmpeg", "-y", "-v", "error", "-f", "lavfi", "-i", f"sine=f=220:d={dur}", "-af", "volume=0.05", f"{B}/audio/{n}.mp3"])
+subprocess.check_call(["ffmpeg", "-y", "-v", "error", "-i", f"{B}/audio/music_upbeat.mp3", f"{B}/audio/music_holiday.mp3"])
+# dino-falls inputs: 4 stills, a packshot and an 8-row calendar
+DF = "/workspace/content-v2/posts/dino-falls-01"
+for i, n in enumerate(["01_wobble", "02_tumble", "03_laugh", "04_situp"]):
+    Image.open(f"{BA}/carousels/{'ABCD'[i]}/{'ABCD'[i]}01-cover_1080x1920.png").convert("RGB").save(f"{DF}/{n}_9x16.jpg")
+box.save(f"{DF}/05_packshot_box_9x16.png")
+with open("/workspace/content-v2/calendar.csv", "w") as f:
+    f.write("date,time,platform,format,concept,caption,asset_path_or_to_generate\n")
+    for d, t in [("2026-11-14", "19:00"), ("2026-11-16", "19:00"), ("2026-11-21", "19:00"), ("2026-11-23", "19:00"),
+                 ("2026-11-26", "13:00"), ("2026-12-06", "19:00"), ("2026-12-11", "13:00"), ("2026-12-20", "19:00")]:
+        f.write(f"{d},{t},x,x,x,x,x\n")
+env = dict(os.environ, PYTHONPATH=f"{HERE}/mock:{VP}", TOVI_FREDOKA=f"{HERE}/fonts/Fredoka-600.ttf",
+           TOVI_NUNITO=f"{HERE}/fonts/Nunito-700.ttf", TOVI_LOGO=f"{BA}/tovinest-primary-logo.png")
+ONLY = sys.argv[1:]                     # e.g. python3 tests/run_mock.py v03 dino
+JOBS = [("v01", ["v01.py"], "/workspace/content-v2/posts/01/01_dino_got_a_delivery.mp4"),
+        ("v02", ["v02.py"], "/workspace/content-v2/posts/02/02_dinos_new_nest.mp4"),
+        ("v03", ["v03.py"], "/workspace/content-v2/posts/03/03_dino_crawl_test.mp4"),
+        ("v04", ["v04.py"], "/workspace/content-v2/posts/04/04_dino_holiday_gift.mp4"),
+        ("p09", ["vprod.py", "09"], "/workspace/content-v2/posts/09/09_ash_starlight_showcase.mp4"),
+        ("p10", ["vprod.py", "10"], "/workspace/content-v2/posts/10/10_rainboho_pov.mp4"),
+        ("dino", ["build_dino_falls.py"], f"{DF}/dino_tumbles_ep01_9x16.mp4")]
+for name, cmd, out in JOBS:
+    if ONLY and name not in ONLY:
+        continue
+    print("==", name); subprocess.check_call([sys.executable, f"{VP}/{cmd[0]}"] + cmd[1:], env=env, cwd=VP)
+    subprocess.check_call([sys.executable, f"{VP}/qa_contact.py", out, "--out", f"/tmp/tovimock/_qa/{name}"], env=env)

@@ -1,7 +1,7 @@
 """STAND-IN for the real lib.py (not in this repo). Only for tests/run_mock.py: it provides the
 same names vlib/v01/v02 use, with simple implementations and placeholder assets, so the layout
 code can be exercised end to end. Do not ship; your real lib.py replaces this."""
-import math, os, subprocess, json
+import math, os, subprocess, json, random
 import numpy as np
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
@@ -61,3 +61,7 @@ class Video:
     def add(self, im): self.p.stdin.write(im.convert("RGB").tobytes())
     def close(self): self.p.stdin.close(); self.p.wait()
 def mux(*a, **k): raise RuntimeError("vlib.mux should be used")
+def card(im, box, r=40, alpha=245, fill=(255, 255, 255)):
+    ov = Image.new("RGBA", im.size, (0, 0, 0, 0))
+    ImageDraw.Draw(ov).rounded_rectangle(tuple(int(v) for v in box), r, fill=tuple(fill) + (alpha,))
+    im.alpha_composite(ov)

@@ -251,23 +251,59 @@ def chip(im, cx, cy, txt, bg, t=1.0, t0=0.0, size=50):
         return None
     return pill(im, cx, cy, txt, fred(size, 600), bg=bg, k=(t - t0) / .3, pad=(34, 14), kind="chip")
 
-def price_sticker(im, x, y, r=125, new=PRICE_EACH, sub="EACH", old=None, bg=None, k=1.0, **kw):
-    """Round price sticker; centre clamped so the whole circle (and its border) stays in SAFE."""
-    new = fix_copy(new)
+def _fit_rotated(L, rot, maxw=SAFE_W, maxh=SAFE_H):
+    """Rotate a layer and shrink it (if needed) so the rotated box fits the safe box."""
+    R = L.rotate(rot, resample=Image.BICUBIC, expand=True) if rot else L
+    s = min(1.0, maxw / R.width, maxh / R.height)
+    if s < 1:
+        R = R.resize((max(1, int(R.width * s)), max(1, int(R.height * s))), Image.LANCZOS)
+    return R
+
+def price_sticker(im, x, y, r=125, new=PRICE_EACH, sub="EACH", old=None, bg=None, k=1.0, rot=0, **kw):
+    """Round price sticker. `old` is drawn as a small line above the price (e.g. '2 MATS FOR').
+    Centre clamped so the whole (rotated) circle stays in SAFE."""
+    new, old, sub = fix_copy(new), (fix_copy(old) if old else None), (fix_copy(sub) if sub else None)
     r = min(r, SAFE_W // 2 - 8)
     D = 2 * r + 12
     L = Image.new("RGBA", (D, D), (0, 0, 0, 0)); d = ImageDraw.Draw(L)
     d.ellipse((0, 0, D - 1, D - 1), fill=WHITE_); d.ellipse((6, 6, D - 7, D - 7), fill=bg or CORAL_)
-    f = fred(int(r * .62), 600)
-    while measure(new, f)[0] > 1.6 * r and f.size > 24:
+    f = fred(int(r * .58), 600)
+    while measure(new, f)[0] > 1.55 * r and f.size > 24:
         f = font_at(f, f.size - 2)
-    d.text((D / 2, D / 2 - (r * .1 if sub else 0)), new, font=f, fill=WHITE_, anchor="mm")
-    if sub:
-        d.text((D / 2, D / 2 + r * .42), sub, font=nun(max(22, int(r * .2)), 800), fill=WHITE_, anchor="mm")
-    px, py = clamp_xy(x - D / 2, y - D / 2, D, D)
-    _paste_scaled(im, L, px, py, k)
-    QA.log("sticker", new, (px, py, px + D, py + D))
-    return (px, py, px + D, py + D)
+    cy = D / 2 + (r * .06 if old else 0) - (r * .08 if sub else 0)
+    d.text((D / 2, cy), new, font=f, fill=WHITE_, anchor="mm")
+    small = nun(max(22, int(r * .17)), 800)
+    for txt, yy in ((old, cy - r * .5), (sub, cy + r * .48)):
+        if txt:
+            ff = small
+            while measure(txt, ff)[0] > 1.45 * r and ff.size > 18:
+                ff = font_at(ff, ff.size - 1)
+            d.text((D / 2, yy), txt, font=ff, fill=WHITE_, anchor="mm")
+    R = _fit_rotated(L, rot)
+    px, py = clamp_xy(x - R.width / 2, y - R.height / 2, R.width, R.height)
+    _paste_scaled(im, R, px, py, k)
+    QA.log("sticker", new, (px, py, px + R.width, py + R.height))
+    return (px, py, px + R.width, py + R.height)
+
+def stamp(im, txt, cx, cy, k, col=None, rot=-10, size=88, fill=(255, 255, 255, 225)):
+    """Rubber-stamp label (outlined rounded box, rotated). Replaces the old per-script stamp(), which
+    started at 1.8x scale and could sit at y=1450: this one fades/scales in from 0.88x to 1.0x, shrinks
+    text to fit, and clamps the rotated box inside SAFE."""
+    if k <= 0:
+        return None
+    txt = fix_copy(txt); col = col or CORAL_
+    f = fred(max(size, MIN_TEXT), 600)
+    ff, lines = fit_lines(txt, f, SAFE_W - 140)
+    T = text_layer(lines, ff, col)
+    w, h = T.width + 80, T.height + 50
+    L = Image.new("RGBA", (w + 20, h + 20), (0, 0, 0, 0)); d = ImageDraw.Draw(L)
+    d.rounded_rectangle((10, 10, 10 + w, 10 + h), 30, outline=col, width=10, fill=fill)
+    L.alpha_composite(T, (10 + 40, 10 + 25))
+    R = _fit_rotated(L, rot)
+    px, py = clamp_xy(cx - R.width / 2, cy - R.height / 2, R.width, R.height)
+    _paste_scaled(im, R, px, py, k, shadow=False)
+    QA.log("stamp", txt, (px, py, px + R.width, py + R.height))
+    return (px, py, px + R.width, py + R.height)
 
 def safe_paste(im, layer, x, y, kind="mascot", shadow_y=None):
     """Paste a mascot / sticker image clamped into SAFE (no limb leaves the box). Returns (x, y)."""

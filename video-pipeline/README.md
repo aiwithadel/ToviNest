@@ -19,47 +19,47 @@ for **IG Reels + TikTok**:
 | Self-check | `Video.close()` writes `<silent>.mp4.qa.json`: any box outside SAFE, any text held < 1.5 s, any text that needed > 2 lines |
 
 ## Install
-Copy into your build folder next to `lib.py`, replacing the old `vlib.py`:
+Copy into your build folder next to `lib.py`, replacing the old `vlib.py` and builders:
 ```bash
-cp video-pipeline/vlib.py video-pipeline/v01.py video-pipeline/v02.py video-pipeline/qa_contact.py /workspace/content-v2/_build/
+cp video-pipeline/{vlib.py,v01.py,v02.py,v03.py,v04.py,vprod.py,qa_contact.py} /workspace/content-v2/_build/
+cp video-pipeline/build_dino_falls.py /tmp/build_dino_falls.py
 cd /workspace/content-v2/_build
 ```
 
 ## Run
-```bash
-python3 v01.py      # -> /workspace/content-v2/posts/01/01_dino_got_a_delivery.mp4 + posts/01/cover.jpg
-python3 v02.py      # -> /workspace/content-v2/posts/02/02_dinos_new_nest.mp4      + posts/02/cover.jpg
-python3 v01.py 2 6.5 13          # preview stills -> /tmp/v01_<t>.jpg (same for v02.py)
-python3 qa_contact.py /workspace/content-v2/posts/01/01_dino_got_a_delivery.mp4 --out /workspace/content-v2/_qa/01
-```
-`qa_contact.py` writes `contact-sheet.png` (frame every 1 s, red safe box, blue IG grid crop, shaded UI zones) and
-`contact-sheet-raw.png`, and prints the vlib QA verdict for that video.
+| Script | Command | Output (same paths as before) |
+|---|---|---|
+| 01 | `python3 v01.py` | `posts/01/01_dino_got_a_delivery.mp4` + `posts/01/cover.jpg` |
+| 02 | `python3 v02.py` | `posts/02/02_dinos_new_nest.mp4` + `cover.jpg` |
+| 03 | `python3 v03.py` | `posts/03/03_dino_crawl_test.mp4` + `cover.jpg` |
+| 04 | `python3 v04.py` | `posts/04/04_dino_holiday_gift.mp4` + `cover.jpg` |
+| 09 | `python3 vprod.py 09` | `posts/09/09_ash_starlight_showcase.mp4` + `cover.jpg` |
+| 10 | `python3 vprod.py 10` | `posts/10/10_rainboho_pov.mp4` + `cover.jpg` |
+| dino-falls-01 | `python3 /tmp/build_dino_falls.py` | `posts/dino-falls-01/dino_tumbles_ep01_9x16.mp4` + `cover.jpg`, `episodes.md`, `calendar.csv` |
 
-## Scripts that were not attached
-`v3_videos.py` (01/04/10), `v03.py`, `vprod.py` (09) and `/tmp/build_dino_falls.py` weren't attached, so they aren't in
-this folder. The first three import `vlib`, so **just running them against this vlib** already:
-moves every `hook(... y=170..300)` into the 320+ band, moves every `draw_caption(... y=1720/1580/470)` into the
-1080–1340 band with 1.5 s holds, moves the `endcard()` CTA from y=1420 to the CTA band with the new prices, and pulls
-`price_sticker(im, 850, 760, r=150)` (04) back inside x ≤ 900.
+Preview stills: `python3 v03.py 2 5 7.5 11` (same for v01-v04) or `python3 vprod.py 09 1.5 4 13` → `/tmp/<id>_<t>.jpg`.
+QA: `python3 qa_contact.py /workspace/content-v2/posts/03/03_dino_crawl_test.mp4 --out /workspace/content-v2/_qa/03`
+(each vlib run also prints `[vlib QA] PASS/CHECK` and writes `/tmp/<id>_silent.mp4.qa.json`; dino-falls prints `[QA]`).
 
-What vlib can't move, because those scripts paste these layers directly, needs a one-line change each:
+dino-falls uses its own fonts: if yours aren't at the `/usr/share/fonts/truetype/sand-box/google/...` paths, set
+`TOVI_FREDOKA=... TOVI_NUNITO=...`. Set `TOVI_LOGO=/path/to/tovinest-primary-logo.png` to put the logo on its cover.
 
-| Script | Change |
+## What changed per script
+| Script | Fixes |
 |---|---|
-| `v03.py` | stamps at y=1450 / "Wipe clean" stamp / thickness card (y 1180–1600): draw text with `safe_text(im, "...", fred(64,600), band="caption")` and paste cards/Dino with `safe_paste(im, layer, x, y)` |
-| all | Dino / mascot pastes: `im.alpha_composite(img,(x,y))` → `safe_paste(im, img, x, y, shadow_y=True)` |
-| all | captions on the endcard: `endcard(im, tt, 0.0, groups=G, caption_t=t)` instead of skipping `draw_caption` after the endcard starts |
-| all | after `mux(...)`: `make_cover('/workspace/content-v2/posts/<id>/cover.jpg', '<title>', hero=<image>)` |
-| `build_dino_falls.py` | replace `draw_caption_block(...)` with `safe_text(im, txt, fred(64,600), band="caption", fill=BROWN)` (pill bottom ≤ 1400); replace `make_end_card(...)` with `endcard(im, tt, 0.0)` (keeps $49.99 / 2 for $89.99 + supervise line inside y 320–1400); replace the AI badge at (36, 36) with `ai_label(im)` |
-
-`v01.py` and `v02.py` here are the full rewritten builders (same inputs, outputs and asset names).
+| `v01.py` | Hooks into the 320+ band; feature chips under the hook (no caption overlap) and re-timed so the last one holds 2.4 s; captions in the 1080–1340 band and continued on the endcard; crawling Dino clamped; AI label inside the box |
+| `v02.py` | Whole floor scene lifted 330 px (`lift_bg`) so Dino's feet are ≤ 1400; endcard tada Dino moved off the right rail into the box |
+| `v03.py` | Captions moved from y=1720 to the caption band; "Dino tested it all!" stamped over the checklist (was y=1450); thickness card 640–1040 (was 1180–1600); "Wipe clean · Waterproof" moved up and re-timed (1.6 s); "APPROVED BY DINO" from 10.6 s (1.6 s); tada + crawling Dino clamped; stamps no longer start at 1.8× scale |
+| `v04.py` | Hook out of the top UI; captions from y=470 to the caption band; price sticker (was x≈700–1000) clamped to x ≤ 900 and reads "2 MATS FOR $89.99"; Santa / Dino-with-box scaled so feet are ≤ 1400 with no overshoot; endcard Santa inside the box |
+| `vprod.py` | Hooks via the safe band, ≤ 2 lines; 'card' photos fitted below the hook inside the safe box; AI label; covers |
+| `build_dino_falls.py` | Caption pill in the caption band (was 1477–1608); AI badge into the box (was (36,36)); end card rebuilt inside y 320–1400 with **$49.99 each · 2 for $89.99** (the script had $39.99 / "2 for $89") + DM CTA; `episodes.md` / calendar copy updated to the same prices and the Sterling pickup line replaced with the DM / ships CTA; emoji removed from burned-in text (Fredoka has no emoji glyphs, so they rendered as boxes) but kept in post captions; 48 kHz / 192 kbps audio, SAR 1:1; fixed a latent buffer overflow in `chime()` that crashed the audio step |
 
 ## Test without the real assets
-`tests/run_mock.py` renders `v01.py` and `v02.py` against `tests/mock/lib.py`, a stand-in for your `lib.py`, using
+`tests/run_mock.py` renders all seven videos against `tests/mock/lib.py`, a stand-in for your `lib.py`, using
 placeholder assets, then runs `qa_contact.py`. It needs ffmpeg, Pillow, numpy and opencv-python-headless, and fetches
 the fonts on first run.
 ```bash
-cd video-pipeline && python3 tests/run_mock.py
+cd video-pipeline && python3 tests/run_mock.py            # or: python3 tests/run_mock.py v03 dino
 ```
 
 ## Note on VO
