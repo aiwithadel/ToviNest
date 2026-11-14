@@ -1,0 +1,11 @@
+{%- comment -%} Brand wordmark used in the header until a logo image is uploaded. {%- endcomment -%}
+<span class="tovi-wordmark">
+  <img src="{{ 'tovi-badge.webp' | asset_url }}" alt="" width="36" height="36">
+  <span>
+    {%- if shop.name contains 'Tovi' -%}
+      <b style="color:#7A8F6A">T</b><b style="color:#7AA3BD">o</b><b style="color:#E07A5F">v</b><b style="color:#E9B041">i</b>&nbsp;<b style="color:#E9B041">N</b><b style="color:#7AA3BD">e</b><b style="color:#E9A6A1">s</b><b style="color:#7A8F6A">t</b>
+    {%- else -%}
+      {{ shop.name | escape }}
+    {%- endif -%}
+  </span>
+</span>

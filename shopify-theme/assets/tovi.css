@@ -1,0 +1,99 @@
+/* Tovi Nest: shared styles for the tovi-* sections, sticky ATC and cart upsell. Mobile first. */
+h1, h2, h3, h4, .h0, .h1, .h2, .h3, .h4 { letter-spacing: -0.01em; }
+.tovi-eyebrow { font-family: var(--font-heading-family); font-weight: 500; letter-spacing: .14em; text-transform: uppercase;
+  font-size: 1.3rem; color: var(--tovi-coral); margin: 0 0 1rem; }
+.tovi-section { padding: 4.8rem 0; }
+@media screen and (min-width: 750px) { .tovi-section { padding: 7.2rem 0; } }
+.tovi-chips { display: flex; flex-wrap: wrap; gap: .8rem; list-style: none; padding: 0; margin: 2rem 0 0; }
+.tovi-chip { display: inline-flex; align-items: center; gap: .6rem; padding: .7rem 1.4rem; border-radius: 999px; font-weight: 700;
+  font-size: 1.35rem; background: rgba(122, 143, 106, .14); color: #4F6343; }
+.tovi-chip svg { width: 1.8rem; height: 1.8rem; }
+.tovi-icon { width: 2.8rem; height: 2.8rem; }
+.tovi-disclaimer { font-size: 1.3rem; opacity: .8; margin-top: 2rem; }
+
+/* hero */
+.tovi-hero { overflow: hidden; position: relative; }
+.tovi-hero__inner { display: grid; gap: 2.4rem; padding-top: 3.2rem; padding-bottom: 4rem; align-items: center; }
+.tovi-hero__title { margin: 0; font-size: clamp(4rem, 11vw, 7.6rem); line-height: 1.02; }
+.tovi-hero__title em { font-style: normal; color: var(--tovi-sage); display: block; }
+.tovi-hero__sub { font-size: 1.8rem; line-height: 1.5; margin: 1.6rem 0 2.4rem; max-width: 48rem; }
+.tovi-hero__buttons { display: flex; flex-wrap: wrap; gap: 1.2rem; }
+.tovi-hero__buttons .button { min-width: 20rem; }
+.tovi-hero__media { position: relative; text-align: center; }
+.tovi-hero__media img { width: 100%; max-width: 56rem; height: auto; margin: 0 auto; display: block; filter: drop-shadow(0 18px 30px rgba(80, 60, 40, .18)); }
+.tovi-hero__blob { position: absolute; inset: 8% 5% 0; border-radius: 50%; background: radial-gradient(circle, rgba(233,166,161,.35), rgba(233,166,161,0) 70%); z-index: -1; }
+@media screen and (min-width: 990px) {
+  .tovi-hero__inner { grid-template-columns: 1.05fr 1fr; padding-top: 5.6rem; padding-bottom: 6.4rem; }
+}
+
+/* offer */
+.tovi-offer__card { display: grid; gap: 2.4rem; align-items: center; border-radius: 3.2rem; padding: 3.2rem 2.4rem; }
+.tovi-offer__price { font-family: var(--font-heading-family); font-weight: 600; font-size: clamp(4.4rem, 12vw, 7.2rem); line-height: 1; margin: .4rem 0 1rem; }
+.tovi-offer__save { display: inline-block; background: var(--tovi-coral); color: #fff; border-radius: 999px; padding: .4rem 1.2rem; font-weight: 800; font-size: 1.4rem; }
+.tovi-offer__media { position: relative; min-height: 22rem; }
+.tovi-offer__media img { width: 72%; height: auto; position: absolute; }
+.tovi-offer__media img:first-child { left: 0; top: 0; transform: rotate(-6deg); }
+.tovi-offer__media img:nth-child(2) { right: 0; bottom: 0; transform: rotate(5deg); }
+.tovi-offer__media--single img { position: static; width: 100%; transform: none !important; }
+@media screen and (min-width: 750px) { .tovi-offer__card { grid-template-columns: 1fr 1fr; padding: 4.8rem; } .tovi-offer__media { min-height: 32rem; } }
+
+/* features */
+.tovi-features__head { text-align: center; max-width: 64rem; margin: 0 auto 3.2rem; }
+.tovi-features__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; list-style: none; padding: 0; margin: 0; }
+.tovi-feature { background: rgb(var(--color-background)); border-radius: 2.4rem; padding: 2rem 1.6rem; box-shadow: 0 18px 40px -26px rgba(110, 74, 43, .45); }
+.tovi-feature__icon { width: 5.6rem; height: 5.6rem; border-radius: 1.8rem; display: grid; place-items: center; margin-bottom: 1.2rem; }
+.tovi-feature__icon svg { width: 3rem; height: 3rem; }
+.tovi-feature h3 { margin: 0 0 .6rem; font-size: 1.9rem; line-height: 1.15; }
+.tovi-feature p { margin: 0; font-size: 1.45rem; line-height: 1.45; opacity: .85; }
+.tovi-tint--sage { background: #E3E8DA; color: #5E7351; } .tovi-tint--sky { background: #DDE9F1; color: #4D7A98; }
+.tovi-tint--coral { background: #F8DDD3; color: #C65E43; } .tovi-tint--mustard { background: #F8E8C4; color: #A9761B; }
+.tovi-tint--blush { background: #F8E1DE; color: #B4635C; }
+@media screen and (min-width: 990px) { .tovi-features__grid { grid-template-columns: repeat(4, 1fr); gap: 2rem; } .tovi-feature { padding: 2.8rem 2.4rem; } }
+
+/* compare */
+.tovi-compare__head { text-align: center; margin-bottom: 3.2rem; }
+.tovi-compare__grid { display: grid; gap: 2rem; }
+.tovi-design { border-radius: 3.2rem; padding: 2.4rem; text-align: center; box-shadow: 0 18px 40px -26px rgba(110, 74, 43, .45); }
+.tovi-design img { width: 100%; height: auto; max-width: 48rem; margin: 0 auto 1.6rem; display: block; }
+.tovi-design h3 { margin: 0 0 .4rem; font-size: 3.2rem; }
+.tovi-design .tovi-chips { justify-content: center; margin-bottom: 2rem; }
+.tovi-swatches { display: flex; gap: .8rem; justify-content: center; margin: 1.2rem 0 0; }
+.tovi-swatches i { width: 2.6rem; height: 2.6rem; border-radius: 50%; border: 3px solid #fff; box-shadow: 0 4px 10px -4px rgba(0, 0, 0, .3); }
+.tovi-compare__both { text-align: center; margin-top: 3.2rem; }
+@media screen and (min-width: 750px) { .tovi-compare__grid { grid-template-columns: 1fr 1fr; gap: 3.2rem; } }
+
+/* gift banner */
+.tovi-gift__card { display: grid; gap: 2rem; align-items: center; border-radius: 3.2rem; padding: 3.2rem 2.4rem; text-align: center; overflow: hidden; }
+.tovi-gift__card h2 { margin: 0 0 1rem; font-size: clamp(3.2rem, 8vw, 5.2rem); }
+.tovi-gift__dates { display: flex; flex-wrap: wrap; gap: .8rem; justify-content: center; margin: 1.6rem 0 2.4rem; padding: 0; list-style: none; }
+.tovi-gift__dates li { background: rgba(255, 255, 255, .22); border-radius: 999px; padding: .6rem 1.4rem; font-weight: 800; font-size: 1.4rem; }
+.tovi-gift__media { display: flex; justify-content: center; align-items: flex-end; gap: 1rem; }
+.tovi-gift__media img { max-height: 26rem; width: auto; height: auto; }
+@media screen and (min-width: 750px) { .tovi-gift__card { grid-template-columns: 1.2fr 1fr; text-align: left; padding: 4.8rem; } .tovi-gift__dates { justify-content: flex-start; } }
+
+/* sticky add to cart (mobile) */
+.tovi-sticky-atc { position: fixed; left: 0; right: 0; bottom: 0; z-index: 30; padding: 1rem 1.2rem calc(1rem + env(safe-area-inset-bottom));
+  background: rgb(var(--color-background)); box-shadow: 0 -10px 30px -12px rgba(74, 52, 34, .35); transform: translateY(110%); transition: transform .25s ease; }
+.tovi-sticky-atc.is-visible { transform: none; }
+.tovi-sticky-atc__inner { display: flex; align-items: center; gap: 1.2rem; max-width: 60rem; margin: 0 auto; }
+.tovi-sticky-atc__info { flex: 1; min-width: 0; line-height: 1.25; }
+.tovi-sticky-atc__title { display: block; font-family: var(--font-heading-family); font-weight: 600; font-size: 1.5rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tovi-sticky-atc__price { font-weight: 800; font-size: 1.5rem; }
+.tovi-sticky-atc .button { min-width: 0; padding: 0 2.4rem; min-height: 4.6rem; flex: none; }
+@media screen and (min-width: 750px) { .tovi-sticky-atc { display: none; } }
+body.tovi-has-sticky { padding-bottom: 7.6rem; }
+@media screen and (min-width: 750px) { body.tovi-has-sticky { padding-bottom: 0; } }
+
+/* cart drawer upsell */
+.tovi-cart-upsell { margin: 0 0 1.2rem; padding: 1.2rem 1.4rem; border-radius: 1.6rem; background: rgba(233, 176, 65, .16); font-size: 1.4rem; line-height: 1.4; }
+.tovi-cart-upsell p { margin: 0; }
+.tovi-cart-upsell p + p { margin-top: .6rem; }
+.tovi-cart-upsell a { font-weight: 800; color: inherit; }
+.tovi-cart-upsell__bar { height: .8rem; border-radius: 999px; background: rgba(110, 74, 43, .12); overflow: hidden; margin-top: .8rem; }
+.tovi-cart-upsell__bar span { display: block; height: 100%; background: var(--tovi-sage); border-radius: 999px; }
+.tovi-cart-upsell__ship { opacity: .8; font-size: 1.3rem; }
+
+/* header wordmark fallback (shown until a logo is uploaded) */
+.tovi-wordmark { font-family: var(--font-heading-family); font-weight: 600; font-size: 2.6rem; line-height: 1; letter-spacing: -.02em; display: inline-flex; align-items: center; gap: .6rem; }
+.tovi-wordmark img { width: 3.6rem; height: 3.6rem; }
+.tovi-wordmark b { font-weight: 600; }

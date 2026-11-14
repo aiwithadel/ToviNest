@@ -1,0 +1,48 @@
+{%- comment -%}
+  Cart drawer line: free-shipping progress (when a threshold is set in Theme settings > Tovi Nest)
+  and the 2-for-$89.99 upsell when exactly one single mat is in the cart.
+{%- endcomment -%}
+{%- liquid
+  assign single = settings.tovi_single_product
+  assign bundle = settings.tovi_bundle_product
+  assign singles = 0
+  assign has_pack = false
+  for item in cart.items
+    if single != blank and item.product_id == single.id
+      assign singles = singles | plus: item.quantity
+    endif
+    if bundle != blank and item.product_id == bundle.id
+      assign has_pack = true
+    endif
+  endfor
+  assign threshold = settings.tovi_free_shipping_threshold | times: 100
+  if bundle != blank
+    assign bundle_url = bundle.url
+  else
+    assign bundle_url = routes.all_products_collection_url
+  endif
+-%}
+{%- if cart.item_count > 0 -%}
+  <div class="tovi-cart-upsell" role="status">
+    {%- if threshold > 0 -%}
+      {%- if cart.total_price >= threshold -%}
+        <p><strong>{{ settings.tovi_free_shipping_unlocked | escape }}</strong></p>
+      {%- else -%}
+        {%- liquid
+          assign remaining = threshold | minus: cart.total_price | money
+          assign pct = cart.total_price | times: 100 | divided_by: threshold
+        -%}
+        <p>{{ settings.tovi_free_shipping_text | escape | replace: '[amount]', remaining }}</p>
+        <div class="tovi-cart-upsell__bar" aria-hidden="true"><span style="width:{{ pct }}%"></span></div>
+      {%- endif -%}
+    {%- endif -%}
+    {%- if has_pack == false and singles == 1 -%}
+      <p><a href="{{ bundle_url }}">{{ settings.tovi_upsell_text | escape }}</a></p>
+    {%- elsif has_pack == false and singles == 0 and settings.tovi_upsell_generic != blank -%}
+      <p><a href="{{ bundle_url }}">{{ settings.tovi_upsell_generic | escape }}</a></p>
+    {%- endif -%}
+    {%- if settings.tovi_shipping_note != blank -%}
+      <p class="tovi-cart-upsell__ship">{{ settings.tovi_shipping_note | escape }}</p>
+    {%- endif -%}
+  </div>
+{%- endif -%}

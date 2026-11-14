@@ -1,0 +1,387 @@
+{
+  "sections": {
+    "hero": {
+      "type": "tovi-hero",
+      "blocks": {
+        "chip-size": {
+          "type": "chip",
+          "settings": {
+            "icon": "ruler",
+            "text": "5.6 × 4 ft"
+          }
+        },
+        "chip-tested": {
+          "type": "chip",
+          "settings": {
+            "icon": "shield",
+            "text": "CPC / CPSIA tested"
+          }
+        },
+        "chip-ship": {
+          "type": "chip",
+          "settings": {
+            "icon": "truck",
+            "text": "Ships across the USA"
+          }
+        }
+      },
+      "block_order": [
+        "chip-size",
+        "chip-tested",
+        "chip-ship"
+      ],
+      "settings": {
+        "eyebrow": "Moon Walkers Premium EVA Playmat",
+        "heading": "Little explorer. <em>Big heart.</em>",
+        "subheading": "A soft, cushioned nest for tummy time, first crawls, and everyday play.",
+        "product": "premium-eva-playmat",
+        "button_label": "Shop the mat",
+        "button_link": "shopify://products/premium-eva-playmat",
+        "button_label_2": "2 for $89.99",
+        "button_link_2": "shopify://products/playmat-2-pack",
+        "color_scheme": "scheme-1"
+      }
+    },
+    "featured_product": {
+      "type": "featured-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h1"
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "badge": {
+          "type": "text",
+          "settings": {
+            "text": "16 tiles · 67 × 48 in (5.6 × 4 ft) · 0.5 in thick · CPC/CPSIA tested",
+            "text_style": "subtitle"
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": false
+          }
+        },
+        "ship": {
+          "type": "text",
+          "settings": {
+            "text": "Ships across the USA · Order by Dec 17 for Christmas",
+            "text_style": "body"
+          }
+        },
+        "supervise": {
+          "type": "text",
+          "settings": {
+            "text": "Always supervise children during play.",
+            "text_style": "subtitle"
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "price",
+        "badge",
+        "variant_picker",
+        "quantity",
+        "buy_buttons",
+        "ship",
+        "supervise"
+      ],
+      "settings": {
+        "product": "premium-eva-playmat",
+        "color_scheme": "scheme-2",
+        "secondary_background": false,
+        "media_size": "large",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "offer": {
+      "type": "tovi-offer",
+      "blocks": {
+        "o1": {
+          "type": "option",
+          "settings": {
+            "text": "Two RainBoho"
+          }
+        },
+        "o2": {
+          "type": "option",
+          "settings": {
+            "text": "Two Ash Starlight"
+          }
+        },
+        "o3": {
+          "type": "option",
+          "settings": {
+            "text": "Mix (one of each)"
+          }
+        }
+      },
+      "block_order": [
+        "o1",
+        "o2",
+        "o3"
+      ],
+      "settings": {
+        "product": "playmat-2-pack",
+        "eyebrow": "Bundle & save",
+        "heading": "2 for $89.99",
+        "save_label": "Save $9.99 vs. two singles",
+        "text": "<p>One for the nursery, one for the living room. Pick two of the same or mix RainBoho and Ash Starlight.</p>",
+        "button_label": "Shop the 2-pack",
+        "button_link": "shopify://products/playmat-2-pack",
+        "color_scheme": "scheme-1",
+        "card_color_scheme": "scheme-5"
+      }
+    },
+    "why": {
+      "type": "tovi-features",
+      "blocks": {
+        "f1": {
+          "type": "feature",
+          "settings": {
+            "icon": "puzzle",
+            "tint": "sage",
+            "title": "16 interlocking tiles",
+            "text": "Snap together into a big 5.6 × 4 ft (67 × 48 in) play space."
+          }
+        },
+        "f2": {
+          "type": "feature",
+          "settings": {
+            "icon": "layers",
+            "tint": "sky",
+            "title": "0.5 in soft EVA",
+            "text": "A soft cushioned landing for tummy time, first crawls and everyday play."
+          }
+        },
+        "f3": {
+          "type": "feature",
+          "settings": {
+            "icon": "shield",
+            "tint": "coral",
+            "title": "CPC / CPSIA tested",
+            "text": "Tested to US children's product requirements."
+          }
+        },
+        "f4": {
+          "type": "feature",
+          "settings": {
+            "icon": "drop",
+            "tint": "mustard",
+            "title": "Wipe-clean top",
+            "text": "Waterproof surface: spills wipe right off with a damp cloth."
+          }
+        }
+      },
+      "block_order": [
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ],
+      "settings": {
+        "eyebrow": "Made for little explorers",
+        "heading": "Why parents love it",
+        "disclaimer": "Always supervise children during play.",
+        "color_scheme": "scheme-6",
+        "card_color_scheme": "scheme-2"
+      }
+    },
+    "compare": {
+      "type": "tovi-compare",
+      "blocks": {
+        "rb": {
+          "type": "design",
+          "settings": {
+            "fallback": "rainboho",
+            "name": "RainBoho",
+            "accent": "#E07A5F",
+            "description": "Boho rainbows, clouds and hearts in warm sand tones.",
+            "swatches": "#E8D9C6, #C3A386, #D2AE98, #F7F0E7",
+            "tags": "Warm & cheerful\nWood & beige rooms",
+            "button_label": "Shop RainBoho"
+          }
+        },
+        "as": {
+          "type": "design",
+          "settings": {
+            "fallback": "ash",
+            "name": "Ash Starlight",
+            "accent": "#7AA3BD",
+            "description": "Stars and crescent moons on soft ash grey.",
+            "swatches": "#ADA7A0, #8E8882, #E6E1DA, #F4F1EC",
+            "tags": "Calm & dreamy\nGrey & white rooms",
+            "button_label": "Shop Ash Starlight"
+          }
+        }
+      },
+      "block_order": [
+        "rb",
+        "as"
+      ],
+      "settings": {
+        "eyebrow": "Pick your vibe",
+        "heading": "RainBoho vs Ash Starlight",
+        "subheading": "Same premium mat, same size and cushion. Two moods.",
+        "product": "premium-eva-playmat",
+        "bundle": "playmat-2-pack",
+        "both_label": "Can't decide? Get both: 2 for $89.99",
+        "both_link": "shopify://products/playmat-2-pack",
+        "color_scheme": "scheme-1",
+        "card_color_scheme": "scheme-2"
+      }
+    },
+    "gift": {
+      "type": "tovi-gift-banner",
+      "settings": {
+        "eyebrow": "Holiday gifting",
+        "heading": "The perfect gift for moms",
+        "text": "A soft, good-looking play space she'll actually want in the living room.",
+        "date_1": "Black Friday – Cyber Monday: Nov 27–30",
+        "date_2": "Order by Dec 17 for Christmas",
+        "cutoff_date": "2026-12-17",
+        "after_text": "Gifts for every little explorer, any time of year.",
+        "product": "premium-eva-playmat",
+        "button_label": "Shop the gift",
+        "button_link": "shopify://products/premium-eva-playmat",
+        "color_scheme": "scheme-1",
+        "card_color_scheme": "scheme-4"
+      }
+    },
+    "faq": {
+      "type": "collapsible-content",
+      "blocks": {
+        "q1": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How big is the mat?",
+            "icon": "ruler",
+            "row_content": "<p>Assembled, it's 67 × 48 in (5.6 × 4 ft) and 0.5 in thick, made of 16 interlocking EVA foam tiles. You can also arrange the tiles to fit a smaller corner.</p>"
+          }
+        },
+        "q2": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How do I clean it?",
+            "icon": "washing",
+            "row_content": "<p>The top is waterproof: wipe it with a damp cloth and a little mild soap, then let it air dry. Tiles can be taken apart to clean the edges.</p>"
+          }
+        },
+        "q3": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How does the 2-pack work?",
+            "icon": "price_tag",
+            "row_content": "<p>Get two mats for $89.99 (instead of $49.99 each). Choose Two RainBoho, Two Ash Starlight, or Mix for one of each.</p>"
+          }
+        },
+        "q4": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "When should I order for Christmas?",
+            "icon": "truck",
+            "row_content": "<p>Order by December 17 for Christmas delivery. We ship across the USA. Black Friday – Cyber Monday runs Nov 27–30.</p>"
+          }
+        },
+        "q5": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What's your return policy?",
+            "icon": "return",
+            "row_content": "<p>Unused items can be returned within 30 days of delivery. Email <a href=\"mailto:hello@tovinest.com\" title=\"Email Tovi Nest\">hello@tovinest.com</a> to start a return.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5"
+      ],
+      "settings": {
+        "caption": "",
+        "heading": "Questions from parents",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "row",
+        "container_color_scheme": "scheme-2",
+        "color_scheme": "scheme-1",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Notes from the nest",
+            "heading_size": "h1"
+          }
+        },
+        "paragraph": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Playtime ideas, new arrivals and subscriber-only offers. No spam, just little-explorer notes.</p>"
+          }
+        },
+        "email_form": {
+          "type": "email_form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "heading",
+        "paragraph",
+        "email_form"
+      ],
+      "settings": {
+        "color_scheme": "scheme-5",
+        "full_width": true,
+        "padding_top": 48,
+        "padding_bottom": 56
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "featured_product",
+    "offer",
+    "why",
+    "compare",
+    "gift",
+    "faq",
+    "newsletter"
+  ]
+}

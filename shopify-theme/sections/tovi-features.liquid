@@ -1,0 +1,65 @@
+<div class="tovi-section color-{{ section.settings.color_scheme }} gradient">
+  <div class="page-width">
+    <div class="tovi-features__head">
+      {%- if section.settings.eyebrow != blank -%}<p class="tovi-eyebrow">{{ section.settings.eyebrow | escape }}</p>{%- endif -%}
+      <h2 class="h1" style="margin:0">{{ section.settings.heading | escape }}</h2>
+    </div>
+    <ul class="tovi-features__grid" role="list">
+      {%- for block in section.blocks -%}
+        <li class="tovi-feature color-{{ section.settings.card_color_scheme }}" {{ block.shopify_attributes }}>
+          <div class="tovi-feature__icon tovi-tint--{{ block.settings.tint }}">{%- render 'tovi-icon', icon: block.settings.icon -%}</div>
+          <h3>{{ block.settings.title | escape }}</h3>
+          {%- if block.settings.text != blank -%}<p>{{ block.settings.text | escape }}</p>{%- endif -%}
+        </li>
+      {%- endfor -%}
+    </ul>
+    {%- if section.settings.disclaimer != blank -%}
+      <p class="tovi-disclaimer center">{{ section.settings.disclaimer | escape }}</p>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Tovi icon cards",
+  "tag": "section",
+  "class": "section",
+  "max_blocks": 8,
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Made for little explorers" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Why parents love it" },
+    { "type": "text", "id": "disclaimer", "label": "Small print", "default": "Always supervise children during play." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Section color scheme", "default": "scheme-6" },
+    { "type": "color_scheme", "id": "card_color_scheme", "label": "Card color scheme", "default": "scheme-2" }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Icon card",
+      "settings": [
+        { "type": "select", "id": "icon", "label": "Icon", "default": "puzzle", "options": [
+          { "value": "puzzle", "label": "Puzzle" }, { "value": "ruler", "label": "Ruler" }, { "value": "layers", "label": "Layers" },
+          { "value": "shield", "label": "Shield" }, { "value": "drop", "label": "Drop" }, { "value": "sponge", "label": "Sponge" },
+          { "value": "heart", "label": "Heart" }, { "value": "baby", "label": "Baby" }, { "value": "home", "label": "Home" },
+          { "value": "truck", "label": "Truck" }, { "value": "gift", "label": "Gift" }, { "value": "star", "label": "Star" } ] },
+        { "type": "select", "id": "tint", "label": "Icon color", "default": "sage", "options": [
+          { "value": "sage", "label": "Sage" }, { "value": "sky", "label": "Sky" }, { "value": "coral", "label": "Coral" },
+          { "value": "mustard", "label": "Mustard" }, { "value": "blush", "label": "Blush" } ] },
+        { "type": "text", "id": "title", "label": "Title", "default": "16 interlocking tiles" },
+        { "type": "text", "id": "text", "label": "Text" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Tovi icon cards",
+      "blocks": [
+        { "type": "feature", "settings": { "icon": "puzzle", "tint": "sage", "title": "16 interlocking tiles", "text": "Snap together into a big 5.6 × 4 ft (67 × 48 in) play space." } },
+        { "type": "feature", "settings": { "icon": "layers", "tint": "sky", "title": "0.5 in soft EVA", "text": "A soft cushioned landing for tummy time and first crawls." } },
+        { "type": "feature", "settings": { "icon": "shield", "tint": "coral", "title": "CPC / CPSIA tested", "text": "Tested to US children's product requirements." } },
+        { "type": "feature", "settings": { "icon": "drop", "tint": "mustard", "title": "Wipe-clean top", "text": "Waterproof surface: spills wipe right off." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

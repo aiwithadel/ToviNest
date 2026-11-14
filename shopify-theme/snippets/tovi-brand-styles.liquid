@@ -1,0 +1,22 @@
+{%- comment -%}
+  Tovi Nest brand layer: self-hosted Fredoka (headings) + Nunito (body), brand palette tokens,
+  rounded/soft shapes. Rendered from layout/theme.liquid after base.css.
+{%- endcomment -%}
+{{ 'tovi-fredoka.woff2' | asset_url | preload_tag: as: 'font', type: 'font/woff2', crossorigin: 'anonymous' }}
+{{ 'tovi-nunito.woff2' | asset_url | preload_tag: as: 'font', type: 'font/woff2', crossorigin: 'anonymous' }}
+<style>
+  @font-face { font-family: "Fredoka"; src: url({{ 'tovi-fredoka.woff2' | asset_url }}) format("woff2"); font-weight: 300 700; font-display: swap; }
+  @font-face { font-family: "Nunito"; src: url({{ 'tovi-nunito.woff2' | asset_url }}) format("woff2"); font-weight: 200 1000; font-display: swap; }
+  :root {
+    --font-heading-family: "Fredoka", ui-rounded, "Arial Rounded MT Bold", sans-serif;
+    --font-heading-style: normal;
+    --font-heading-weight: 600;
+    --font-body-family: "Nunito", ui-rounded, system-ui, sans-serif;
+    --font-body-style: normal;
+    --font-body-weight: 500;
+    --font-body-weight-bold: 800;
+    --tovi-sage: #7A8F6A; --tovi-sage-dark: #5E7351; --tovi-sky: #7AA3BD; --tovi-coral: #E07A5F;
+    --tovi-mustard: #E9B041; --tovi-blush: #E9A6A1; --tovi-cream: #FFF4E6; --tovi-brown: #6E4A2B; --tovi-ink: #4A3422;
+  }
+</style>
+{{ 'tovi.css' | asset_url | stylesheet_tag }}

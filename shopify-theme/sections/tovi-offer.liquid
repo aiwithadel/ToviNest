@@ -1,0 +1,75 @@
+{%- liquid
+  assign p = section.settings.product
+  assign link = section.settings.button_link
+  if link == blank
+    if p != blank
+      assign link = p.url
+    else
+      assign link = routes.all_products_collection_url
+    endif
+  endif
+-%}
+<div class="tovi-section color-{{ section.settings.color_scheme }} gradient">
+  <div class="page-width">
+    <div class="tovi-offer__card color-{{ section.settings.card_color_scheme }} gradient">
+      <div class="tovi-offer__text">
+        {%- if section.settings.eyebrow != blank -%}<p class="tovi-eyebrow">{{ section.settings.eyebrow | escape }}</p>{%- endif -%}
+        <h2 class="tovi-offer__price">{{ section.settings.heading | escape }}</h2>
+        {%- if section.settings.save_label != blank -%}<span class="tovi-offer__save">{{ section.settings.save_label | escape }}</span>{%- endif -%}
+        {%- if section.settings.text != blank -%}<div class="rte" style="margin-top:1.6rem">{{ section.settings.text }}</div>{%- endif -%}
+        {%- if section.blocks.size > 0 -%}
+          <ul class="tovi-chips" role="list">
+            {%- for block in section.blocks -%}
+              <li class="tovi-chip" {{ block.shopify_attributes }}>{%- render 'tovi-icon', icon: 'check' -%}{{ block.settings.text | escape }}</li>
+            {%- endfor -%}
+          </ul>
+        {%- endif -%}
+        <div style="margin-top:2.4rem">
+          <a class="button button--primary" href="{{ link }}">{{ section.settings.button_label | escape }}</a>
+        </div>
+      </div>
+      <div class="tovi-offer__media{% if section.settings.image != blank %} tovi-offer__media--single{% endif %}">
+        {%- if section.settings.image != blank -%}
+          {{ section.settings.image | image_url: width: 1100 | image_tag: loading: 'lazy', sizes: '(min-width: 750px) 50vw, 100vw', widths: '375, 550, 750, 1100' }}
+        {%- else -%}
+          <img src="{{ 'tovi-mat-rainboho.webp' | asset_url }}" alt="RainBoho playmat" width="980" height="583" loading="lazy">
+          <img src="{{ 'tovi-mat-ash-starlight.webp' | asset_url }}" alt="Ash Starlight playmat" width="980" height="583" loading="lazy">
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Tovi 2-pack offer",
+  "tag": "section",
+  "class": "section",
+  "max_blocks": 4,
+  "settings": [
+    { "type": "product", "id": "product", "label": "2-pack product", "info": "playmat-2-pack" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Bundle & save" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "2 for $89.99" },
+    { "type": "text", "id": "save_label", "label": "Savings badge", "default": "Save $9.99 vs. two singles" },
+    { "type": "richtext", "id": "text", "label": "Text", "default": "<p>One for the nursery, one for the living room. Pick two of the same or mix RainBoho and Ash Starlight.</p>" },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "Shop the 2-pack" },
+    { "type": "url", "id": "button_link", "label": "Button link", "info": "Leave empty to link to the 2-pack product." },
+    { "type": "image_picker", "id": "image", "label": "Image", "info": "Optional. The two built-in mat renders are shown by default." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Section color scheme", "default": "scheme-1" },
+    { "type": "color_scheme", "id": "card_color_scheme", "label": "Card color scheme", "default": "scheme-5" }
+  ],
+  "blocks": [
+    { "type": "option", "name": "Option", "settings": [ { "type": "text", "id": "text", "label": "Text", "default": "Two RainBoho" } ] }
+  ],
+  "presets": [
+    {
+      "name": "Tovi 2-pack offer",
+      "blocks": [
+        { "type": "option", "settings": { "text": "Two RainBoho" } },
+        { "type": "option", "settings": { "text": "Two Ash Starlight" } },
+        { "type": "option", "settings": { "text": "Mix (one of each)" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

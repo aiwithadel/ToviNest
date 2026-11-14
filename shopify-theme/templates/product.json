@@ -1,0 +1,220 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "subtitle": {
+          "type": "text",
+          "settings": {
+            "text": "16 tiles · 67 × 48 in (5.6 × 4 ft) · 0.5 in thick · CPC/CPSIA tested",
+            "text_style": "subtitle"
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": false
+          }
+        },
+        "offer": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{%- if settings.tovi_bundle_product != blank and product.id != settings.tovi_bundle_product.id -%}<p class=\"tovi-cart-upsell\" style=\"margin:0\"><a href=\"{{ settings.tovi_bundle_product.url }}\">Bundle &amp; save: 2 for $89.99 &rarr;</a></p>{%- endif -%}"
+          }
+        },
+        "ship": {
+          "type": "text",
+          "settings": {
+            "text": "Ships across the USA · Order by Dec 17 for Christmas",
+            "text_style": "body"
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
+        },
+        "specs": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Size & specs",
+            "icon": "ruler",
+            "content": "<ul><li>16 interlocking tiles</li><li>Assembled: 67 × 48 in (5.6 × 4 ft), 170 × 122 cm</li><li>0.5 in (1.2 cm) soft EVA foam</li><li>Waterproof, wipe-clean top</li><li>CPC / CPSIA tested</li><li>Designs: RainBoho, Ash Starlight</li></ul>"
+          }
+        },
+        "care": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Care",
+            "icon": "washing",
+            "content": "<p>Wipe with a damp cloth and mild soap, then air dry. Keep away from direct heat.</p>"
+          }
+        },
+        "shipping": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Shipping & returns",
+            "icon": "truck",
+            "content": "<p>Ships across the USA. Order by Dec 17 for Christmas. Unused items can be returned within 30 days of delivery: email hello@tovinest.com.</p>"
+          }
+        },
+        "supervise": {
+          "type": "text",
+          "settings": {
+            "text": "Always supervise children during play.",
+            "text_style": "subtitle"
+          }
+        },
+        "share": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "price",
+        "subtitle",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "offer",
+        "ship",
+        "description",
+        "specs",
+        "care",
+        "shipping",
+        "supervise",
+        "share"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-2",
+        "media_position": "left",
+        "gallery_layout": "thumbnail_slider",
+        "media_size": "large",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "image_zoom": "lightbox",
+        "mobile_thumbnails": "hide",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 12
+      }
+    },
+    "disclosures": {
+      "type": "disclosures",
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 0
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "heading": "You may also like",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 28
+      }
+    },
+    "why": {
+      "type": "tovi-features",
+      "blocks": {
+        "f1": {
+          "type": "feature",
+          "settings": {
+            "icon": "puzzle",
+            "tint": "sage",
+            "title": "16 interlocking tiles",
+            "text": "Snap together into a big 5.6 × 4 ft (67 × 48 in) play space."
+          }
+        },
+        "f2": {
+          "type": "feature",
+          "settings": {
+            "icon": "layers",
+            "tint": "sky",
+            "title": "0.5 in soft EVA",
+            "text": "A soft cushioned landing for tummy time, first crawls and everyday play."
+          }
+        },
+        "f3": {
+          "type": "feature",
+          "settings": {
+            "icon": "shield",
+            "tint": "coral",
+            "title": "CPC / CPSIA tested",
+            "text": "Tested to US children's product requirements."
+          }
+        },
+        "f4": {
+          "type": "feature",
+          "settings": {
+            "icon": "drop",
+            "tint": "mustard",
+            "title": "Wipe-clean top",
+            "text": "Waterproof surface: spills wipe right off with a damp cloth."
+          }
+        }
+      },
+      "block_order": [
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ],
+      "settings": {
+        "eyebrow": "Made for little explorers",
+        "heading": "Why parents love it",
+        "disclaimer": "Always supervise children during play.",
+        "color_scheme": "scheme-6",
+        "card_color_scheme": "scheme-2"
+      }
+    },
+    "sticky_atc": {
+      "type": "tovi-sticky-atc",
+      "settings": {
+        "button_label": "Add to cart",
+        "color_scheme": "scheme-2"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "why",
+    "disclosures",
+    "related-products",
+    "sticky_atc"
+  ]
+}

@@ -1,0 +1,101 @@
+{%- liquid
+  assign both = section.settings.both_link
+  if both == blank and section.settings.bundle != blank
+    assign both = section.settings.bundle.url
+  endif
+-%}
+<div class="tovi-section color-{{ section.settings.color_scheme }} gradient">
+  <div class="page-width">
+    <div class="tovi-compare__head">
+      {%- if section.settings.eyebrow != blank -%}<p class="tovi-eyebrow">{{ section.settings.eyebrow | escape }}</p>{%- endif -%}
+      <h2 class="h1" style="margin:0">{{ section.settings.heading | escape }}</h2>
+      {%- if section.settings.subheading != blank -%}<p style="margin:1rem 0 0">{{ section.settings.subheading | escape }}</p>{%- endif -%}
+    </div>
+    <div class="tovi-compare__grid">
+      {%- for block in section.blocks -%}
+        {%- liquid
+          assign link = block.settings.link
+          if link == blank
+            if section.settings.product != blank
+              assign link = section.settings.product.url
+            else
+              assign link = routes.all_products_collection_url
+            endif
+          endif
+          assign tags = block.settings.tags | newline_to_br | split: '<br />'
+          assign swatches = block.settings.swatches | split: ','
+        -%}
+        <div class="tovi-design color-{{ section.settings.card_color_scheme }}" {{ block.shopify_attributes }}>
+          {%- if block.settings.image != blank -%}
+            {{ block.settings.image | image_url: width: 1000 | image_tag: loading: 'lazy', sizes: '(min-width: 750px) 45vw, 100vw', widths: '375, 550, 750, 1000' }}
+          {%- elsif block.settings.fallback == 'ash' -%}
+            <img src="{{ 'tovi-mat-ash-starlight.webp' | asset_url }}" alt="Ash Starlight playmat" width="980" height="583" loading="lazy">
+          {%- else -%}
+            <img src="{{ 'tovi-mat-rainboho.webp' | asset_url }}" alt="RainBoho playmat" width="980" height="583" loading="lazy">
+          {%- endif -%}
+          <h3 style="color:{{ block.settings.accent }}">{{ block.settings.name | escape }}</h3>
+          <p style="margin:0">{{ block.settings.description | escape }}</p>
+          <div class="tovi-swatches" aria-hidden="true">
+            {%- for c in swatches -%}<i style="background:{{ c | strip }}"></i>{%- endfor -%}
+          </div>
+          <ul class="tovi-chips" role="list">
+            {%- for t in tags -%}{%- assign tt = t | strip -%}{%- if tt != blank -%}<li class="tovi-chip">{{ tt | escape }}</li>{%- endif -%}{%- endfor -%}
+          </ul>
+          <a class="button button--secondary" href="{{ link }}">{{ block.settings.button_label | escape }}</a>
+        </div>
+      {%- endfor -%}
+    </div>
+    {%- if section.settings.both_label != blank and both != blank -%}
+      <div class="tovi-compare__both">
+        <a class="button button--primary" href="{{ both }}">{{ section.settings.both_label | escape }}</a>
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Tovi compare designs",
+  "tag": "section",
+  "class": "section",
+  "max_blocks": 3,
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Pick your vibe" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "RainBoho vs Ash Starlight" },
+    { "type": "text", "id": "subheading", "label": "Subheading", "default": "Same premium mat, same size and cushion. Two moods." },
+    { "type": "product", "id": "product", "label": "Single mat product" },
+    { "type": "product", "id": "bundle", "label": "2-pack product" },
+    { "type": "text", "id": "both_label", "label": "Bottom button label", "default": "Can't decide? Get both: 2 for $89.99" },
+    { "type": "url", "id": "both_link", "label": "Bottom button link", "info": "Leave empty to link to the 2-pack product." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Section color scheme", "default": "scheme-1" },
+    { "type": "color_scheme", "id": "card_color_scheme", "label": "Card color scheme", "default": "scheme-2" }
+  ],
+  "blocks": [
+    {
+      "type": "design",
+      "name": "Design",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "select", "id": "fallback", "label": "Built-in image (until you upload one)", "default": "rainboho", "options": [
+          { "value": "rainboho", "label": "RainBoho render" }, { "value": "ash", "label": "Ash Starlight render" } ] },
+        { "type": "text", "id": "name", "label": "Name", "default": "RainBoho" },
+        { "type": "color", "id": "accent", "label": "Name color", "default": "#E07A5F" },
+        { "type": "text", "id": "description", "label": "Description", "default": "Boho rainbows, clouds and hearts in warm sand tones." },
+        { "type": "text", "id": "swatches", "label": "Swatch colors (comma separated)", "default": "#E8D9C6, #C3A386, #D2AE98, #F7F0E7" },
+        { "type": "textarea", "id": "tags", "label": "Tags (one per line)", "default": "Warm & cheerful\nWood & beige rooms" },
+        { "type": "text", "id": "button_label", "label": "Button label", "default": "Shop RainBoho" },
+        { "type": "url", "id": "link", "label": "Button link", "info": "Leave empty to link to the single mat product." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Tovi compare designs",
+      "blocks": [
+        { "type": "design", "settings": { "name": "RainBoho" } },
+        { "type": "design", "settings": { "name": "Ash Starlight", "fallback": "ash", "accent": "#7AA3BD", "description": "Stars and crescent moons on soft ash grey.", "swatches": "#ADA7A0, #8E8882, #E6E1DA, #F4F1EC", "tags": "Calm & dreamy\nGrey & white rooms", "button_label": "Shop Ash Starlight" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

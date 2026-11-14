@@ -1,0 +1,71 @@
+{%- liquid
+  assign link = section.settings.button_link
+  if link == blank
+    if section.settings.product != blank
+      assign link = section.settings.product.url
+    else
+      assign link = routes.all_products_collection_url
+    endif
+  endif
+  assign now_s = 'now' | date: '%s' | plus: 0
+  assign cutoff_s = section.settings.cutoff_date | append: ' 23:59:59' | date: '%s' | plus: 0
+  assign past_cutoff = false
+  if section.settings.cutoff_date != blank and now_s > cutoff_s
+    assign past_cutoff = true
+  endif
+-%}
+<div class="tovi-section color-{{ section.settings.color_scheme }} gradient">
+  <div class="page-width">
+    <div class="tovi-gift__card color-{{ section.settings.card_color_scheme }} gradient">
+      <div>
+        {%- if section.settings.eyebrow != blank -%}<p class="tovi-eyebrow" style="color:inherit;opacity:.85">{{ section.settings.eyebrow | escape }}</p>{%- endif -%}
+        <h2>{{ section.settings.heading | escape }}</h2>
+        {%- if past_cutoff -%}
+          {%- if section.settings.after_text != blank -%}<p style="margin:0">{{ section.settings.after_text | escape }}</p>{%- endif -%}
+        {%- else -%}
+          {%- if section.settings.text != blank -%}<p style="margin:0">{{ section.settings.text | escape }}</p>{%- endif -%}
+          <ul class="tovi-gift__dates" role="list">
+            {%- if section.settings.date_1 != blank -%}<li>{{ section.settings.date_1 | escape }}</li>{%- endif -%}
+            {%- if section.settings.date_2 != blank -%}<li>{{ section.settings.date_2 | escape }}</li>{%- endif -%}
+          </ul>
+        {%- endif -%}
+        <a class="button button--primary" href="{{ link }}" {% if past_cutoff %}style="margin-top:2rem"{% endif %}>{{ section.settings.button_label | escape }}</a>
+      </div>
+      <div class="tovi-gift__media">
+        {%- if section.settings.image != blank -%}
+          {{ section.settings.image | image_url: width: 700 | image_tag: loading: 'lazy', sizes: '(min-width: 750px) 30vw, 60vw', widths: '300, 450, 700' }}
+        {%- else -%}
+          <img src="{{ 'tovi-dino.webp' | asset_url }}" alt="Dino, the Tovi Nest mascot" width="653" height="900" loading="lazy">
+        {%- endif -%}
+        {%- if section.settings.friend_image != blank -%}
+          {{ section.settings.friend_image | image_url: width: 700 | image_tag: loading: 'lazy', sizes: '(min-width: 750px) 25vw, 45vw', widths: '300, 450, 700' }}
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Tovi holiday gift banner",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Holiday gifting" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "The perfect gift for moms" },
+    { "type": "text", "id": "text", "label": "Text", "default": "A soft, good-looking play space she'll actually want in the living room." },
+    { "type": "text", "id": "date_1", "label": "Date pill 1", "default": "Black Friday – Cyber Monday: Nov 27–30" },
+    { "type": "text", "id": "date_2", "label": "Date pill 2", "default": "Order by Dec 17 for Christmas" },
+    { "type": "text", "id": "cutoff_date", "label": "Christmas cutoff (YYYY-MM-DD)", "default": "2026-12-17", "info": "After this date the dates are hidden and the text below is shown instead." },
+    { "type": "text", "id": "after_text", "label": "Text after the cutoff", "default": "Gifts for every little explorer, any time of year." },
+    { "type": "product", "id": "product", "label": "Product" },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "Shop the gift" },
+    { "type": "url", "id": "button_link", "label": "Button link", "info": "Leave empty to link to the product above." },
+    { "type": "image_picker", "id": "image", "label": "Image (Dino)", "info": "The built-in Dino image is used until you upload one." },
+    { "type": "image_picker", "id": "friend_image", "label": "Second image (Dino's friend)", "info": "Optional: the blush-pink dino with the mustard bow." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Section color scheme", "default": "scheme-1" },
+    { "type": "color_scheme", "id": "card_color_scheme", "label": "Card color scheme", "default": "scheme-4" }
+  ],
+  "presets": [ { "name": "Tovi holiday gift banner" } ]
+}
+{% endschema %}
