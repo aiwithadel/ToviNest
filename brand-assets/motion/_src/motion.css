@@ -1,0 +1,29 @@
+@property --n { syntax: '<integer>'; inherits: false; initial-value: 0; }
+.stage { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: var(--cream); }
+.scene { position: absolute; inset: 0; padding: 230px 72px 330px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; z-index: 2; }
+.topbar { position: absolute; left: 72px; right: 72px; top: 120px; display: flex; justify-content: space-between; align-items: center; z-index: 3; }
+.count { counter-reset: num var(--n); }
+.count::after { content: counter(num); }
+.big { font-family: Fredoka; font-weight: 600; color: var(--ink); line-height: .95; letter-spacing: -2px; }
+.w { display: inline-block; }
+.line { position: absolute; background: var(--brown); }
+.bb { position: absolute; }
+@keyframes fadeIn { from { opacity: 0 } to { opacity: 1 } }
+@keyframes up { from { opacity: 0; transform: translateY(80px) } to { opacity: 1; transform: none } }
+@keyframes down { from { opacity: 0; transform: translateY(-70px) } to { opacity: 1; transform: none } }
+@keyframes fromL { from { opacity: 0; transform: translateX(-160px) } to { opacity: 1; transform: none } }
+@keyframes fromR { from { opacity: 0; transform: translateX(160px) } to { opacity: 1; transform: none } }
+@keyframes pop { 0% { opacity: 0; transform: scale(.35) } 65% { opacity: 1; transform: scale(1.08) } 100% { opacity: 1; transform: scale(1) } }
+@keyframes drawX { from { transform: scaleX(0) } to { transform: scaleX(1) } }
+@keyframes drawY { from { transform: scaleY(0) } to { transform: scaleY(1) } }
+@keyframes bob { 0%, 100% { transform: translateY(0) } 50% { transform: translateY(-16px) } }
+@keyframes wave { 0%, 100% { transform: rotate(0) } 25% { transform: rotate(-7deg) } 75% { transform: rotate(7deg) } }
+@keyframes pulse { 0%, 100% { transform: scale(1) } 50% { transform: scale(1.06) } }
+@keyframes reveal { from { clip-path: inset(0 100% 0 0) } to { clip-path: inset(0 0 0 0) } }
+@keyframes revealUp { from { clip-path: inset(100% 0 0 0) } to { clip-path: inset(0 0 0 0) } }
+@keyframes fly { from { opacity: 0; transform: translate(var(--dx), var(--dy)) rotate(var(--r)) scale(.7) } to { opacity: 1; transform: rotate(var(--r2)) } }
+@keyframes snap { from { transform: rotate(var(--r2)) } to { transform: none } }
+@keyframes spinPop { 0% { opacity: 0; transform: scale(.2) rotate(-220deg) } 80% { opacity: 1; transform: scale(1.06) rotate(-8deg) } 100% { opacity: 1; transform: scale(1) rotate(-4deg) } }
+@keyframes swingIn { from { opacity: 0; transform: rotate(-18deg) scale(.8) } to { opacity: 1; transform: none } }
+@keyframes zoomOut { from { transform: scale(1.12) } to { transform: scale(1) } }
+@keyframes shine { from { transform: translateX(-120%) skewX(-20deg) } to { transform: translateX(220%) skewX(-20deg) } }
