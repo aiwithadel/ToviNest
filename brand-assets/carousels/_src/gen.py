@@ -172,7 +172,7 @@ def page(n, total, tag, body, bgx=""):
     return f'''{bg}
 <header><div class="lockup"><img src="{BADGE}">{wordmark(46)}</div><div class="tag">{tag}</div></header>
 <main>{body}</main>
-<footer><div class="handle">{icon("bag", 2.4).replace("<svg", '<svg style="width:30px;height:30px;color:#7A8F6A"')}<span><b>@tovinest</b> · TikTok Shop</span></div>
+<footer><div class="handle">{icon("bag", 2.4).replace("<svg", '<svg style="width:30px;height:30px;color:#7A8F6A"')}<span><b>@tovinest</b> · Ships across the USA</span></div>
 <div class="dots">{dots}</div>{right}</footer>'''
 
 def doc(inner, ratio):
@@ -181,16 +181,17 @@ def doc(inner, ratio):
 
 # ---------------------------------------------------------------- price block
 def price_block(center=True, duo=True):
-    duo_html = ('<div class="card price duo"><div class="lbl">Bundle deal</div><div class="now">2 for $89</div>'
-                '<div class="note">Mix &amp; match designs</div></div>') if duo else ""
+    duo_html = ('<div class="card price duo"><div class="lbl">Bundle deal</div><div class="now">2 for $89.99</div>'
+                '<div class="note">Mix &amp; match · save $9.99</div></div>') if duo else ""
     return (f'<div class="price-row" style="justify-content:{"center" if center else "flex-start"}">'
-            '<div class="card price"><div class="lbl">Launch price</div><div class="old">$49.99</div><div class="now">$39.99</div></div>'
+            '<div class="card price"><div class="lbl">Each</div><div class="now">$49.99</div></div>'
             f'{duo_html}</div>')
 
-def cta_block(text="Shop on TikTok Shop"):
-    return (f'<div style="display:flex;flex-direction:column;align-items:center;margin-top:36px">'
+def cta_block(text="DM to order", supervise=True):
+    note = '<div class="note-sm" style="margin-top:10px">Always supervise children during play.</div>' if supervise else ""
+    return (f'<div style="display:flex;flex-direction:column;align-items:center;margin-top:30px">'
             f'<div class="cta">{icon("bag", 2.4)}{text}</div>'
-            '<div class="handle-big">Search <span>@tovinest</span> on TikTok</div></div>')
+            f'<div class="handle-big">Ships across the USA · <span>@tovinest</span></div>{note}</div>')
 
 # ================================================================ SLIDES
 def photo(src, w, h, rot=0, extra=""):
@@ -222,14 +223,14 @@ def A():
 <div class="center" style="display:flex;flex-direction:column;align-items:center">
  <div class="kicker">Unboxing the playmat</div>
  <h1>What's in<br>the <em>box?</em></h1>
- <div class="sub">The <b>Moon Walkers Premium EVA Playmat</b></div>
+ <div class="sub">The <b>Moon Walkers Premium EVA Playmat</b> · $49.99</div>
  <div style="position:relative;width:936px;height:600px;margin-top:44px">
   <div style="position:absolute;left:430px;top:30px">{photo(BOX_AS, 360, 470, 7)}</div>
   <div style="position:absolute;left:170px;top:10px">{photo(BOX_RB, 400, 530, -4)}</div>
   <div style="position:absolute;right:-6px;top:-10px;width:210px;height:210px;border-radius:50%;background:var(--coral);color:#fff;
    display:flex;flex-direction:column;align-items:center;justify-content:center;transform:rotate(10deg);font-family:Fredoka;box-shadow:0 18px 30px -12px rgba(224,122,95,.7)">
-   <div style="font-size:22px;letter-spacing:2px;font-weight:500">LAUNCH</div><div style="font-size:62px;font-weight:600;line-height:1">$39.99</div>
-   <div style="font-size:21px;text-decoration:line-through;opacity:.85;font-weight:500">$49.99</div></div>
+   <div style="font-size:24px;letter-spacing:2px;font-weight:500">2 FOR</div><div style="font-size:58px;font-weight:600;line-height:1">$89.99</div>
+   <div style="font-size:20px;opacity:.9;font-weight:500">mix &amp; match</div></div>
  </div>
 </div>
 {dino(left=-10, bottom=-20, w=250, bubble="Let's open it!", bpos="tl", bstyle="left:120px;top:-70px")}''')))
@@ -283,7 +284,7 @@ def A():
     s.append(("shop", page(6, T, tag, f'''
 <div class="center" style="display:flex;flex-direction:column;align-items:center">
  <h1>Unbox <em>yours</em></h1>
- <div class="sub">A soft, safe play corner, all in one box.</div>
+ <div class="sub">A soft, cozy play corner, all in one box.</div>
  {mat3d("rb", 640, mt=10)}
  <div style="margin-top:34px">{price_block()}</div>
  {cta_block()}
@@ -322,7 +323,7 @@ def B():
 {slab}
 <div class="note-sm" style="text-align:center;margin-top:-6px">Illustration, edge enlarged to show thickness</div>
 <div class="grid2 tight" style="margin-top:24px">
- {tile("heart","pink","Cushions tumbles","Soft landings for wobbly sitters &amp; walkers")}
+ {tile("heart","pink","Soft cushioned landing","For wobbly sitters &amp; new walkers")}
  {tile("baby","mustard","Comfy for knees","Crawling and kneeling feel softer")}
  {tile("volume","sky","Quieter play","Softens the thud of toys &amp; feet")}
  {tile("home","sage","Cozy floor zone","A soft layer over hard floors")}
@@ -351,16 +352,16 @@ def B():
 
     rows = [("layers","Material","Soft EVA foam"),("puzzle","Tiles","16 interlocking"),("ruler","Size","5.6 × 4 ft (67 × 48 in)"),
             ("expand","Metric","170 × 122 cm"),("layers","Thickness","0.5 in (1.2 cm)"),("drop","Surface","Waterproof, wipe clean"),
-            ("feet","Grip","Non-slip"),("shield","Safety","CPSIA tested · CPC"),("star","Designs","RainBoho · Ash Starlight")]
+            ("feet","Grip","Non-slip"),("shield","Testing","CPC / CPSIA tested"),("star","Designs","RainBoho · Ash Starlight")]
     tr = "".join(f'<tr><td>{icon(i)}{k}</td><td>{v}</td></tr>' for i, k, v in rows)
     s.append(("spec-sheet", page(5, T, tag, f'''
 <div class="kicker">Save this</div>
 <h1 class="sm">The <em>spec</em> sheet</h1>
 <div class="card spec-tight" style="margin-top:26px;padding:6px 6px"><table class="spec">{tr}</table></div>
 <div style="display:flex;align-items:center;justify-content:space-between;margin-top:26px">
- <div><div style="font-size:27px;font-weight:700;color:var(--muted)">Launch price <s style="color:#A99684">$49.99</s></div>
- <div style="font-family:Fredoka;font-weight:600;font-size:76px;color:var(--coral);line-height:1">$39.99</div></div>
- <div class="cta" style="font-size:32px;padding:22px 36px">{icon("bag",2.4)}@tovinest</div>
+ <div><div style="font-family:Fredoka;font-weight:600;font-size:66px;color:var(--coral);line-height:1">$49.99 <span style="font-size:32px;color:var(--muted)">each</span></div>
+ <div style="font-size:30px;font-weight:800;color:var(--ink);margin-top:8px">2 for $89.99 · mix &amp; match</div></div>
+ <div class="cta" style="font-size:32px;padding:22px 36px">{icon("bag",2.4)}DM to order</div>
 </div>''')))
     return s
 
@@ -370,13 +371,13 @@ def C():
     s = []
     s.append(("cover", page(1, T, tag, f'''
 <div class="kicker">5 reasons</div>
-<h1>Soft. Safe.<br><em>Seriously</em> cute.</h1>
+<h1>Soft. Cozy.<br><em>Seriously</em> cute.</h1>
 <div class="sub">Why the <b>Moon Walkers playmat</b> belongs in your home.</div>
 {mat3d("as", 760, mt=70)}
 {dino(left=-14, bottom=-30, w=250, bubble="Made with love!", bpos="tl", bstyle="left:140px;top:-74px")}''')))
 
     s.append(("safety", page(2, T, tag, f'''
-<div class="kicker">01 · Safety first</div>
+<div class="kicker">01 · Tested</div>
 <h1 class="md">Tested for<br><em>little ones</em></h1>
 <div class="sub">CPSIA tested and backed by a <b>Children's Product Certificate (CPC)</b>.</div>
 <div style="display:flex;gap:30px;justify-content:center;margin-top:56px">
@@ -413,9 +414,9 @@ def C():
 
     s.append(("soft-easy", page(5, T, tag, f'''
 <div class="kicker">04 · Comfort &amp; setup</div>
-<h1 class="md">Soft landings,<br><em>easy</em> setup</h1>
+<h1 class="md">Soft &amp; cushioned,<br><em>easy</em> setup</h1>
 <div class="grid2" style="margin-top:50px">
- {tile("layers","sage","0.5 in cushion","Thick, soft EVA for tumbles &amp; crawling")}
+ {tile("layers","sage","0.5 in cushion","Thick, soft EVA for crawling &amp; play")}
  {tile("timer","mustard","Sets up in minutes","16 tiles click together, no tools")}
  {tile("puzzle","sky","Rearrange anytime","Fit a corner, a nursery or a playroom")}
  {tile("volume","pink","Quieter play","Softens the thud of toys &amp; feet")}
@@ -467,7 +468,7 @@ def D():
 
     rows = [("Vibe","Warm &amp; cheerful","Calm &amp; dreamy"),("Motifs","Rainbows, clouds, hearts","Stars, moons"),
             ("Tones","Sand, cream, blush","Ash grey, white"),("Best with","Wood &amp; beige decor","Grey &amp; white decor"),
-            ("Size","5.6 × 4 ft","5.6 × 4 ft"),("Thickness","0.5 in","0.5 in"),("Safety","CPSIA · CPC","CPSIA · CPC")]
+            ("Size","5.6 × 4 ft","5.6 × 4 ft"),("Thickness","0.5 in","0.5 in"),("Testing","CPC / CPSIA","CPC / CPSIA")]
     tr = "".join(f'<div style="display:contents"><div style="padding:13px 0;color:var(--muted);font-weight:800;font-size:25px;border-top:2px dashed var(--line)">{a}</div>'
                  f'<div style="padding:13px 0;font-family:Fredoka;font-weight:500;font-size:29px;border-top:2px dashed var(--line)">{b}</div>'
                  f'<div style="padding:13px 0;font-family:Fredoka;font-weight:500;font-size:29px;border-top:2px dashed var(--line)">{c}</div></div>' for a, b, c in rows)
@@ -493,11 +494,11 @@ def D():
   <div style="position:absolute;right:20px;top:90px;transform:rotate(5deg)">{mat_flat("as", 460)}</div>
   <div style="position:absolute;left:50%;top:150px;transform:translateX(-50%) rotate(-4deg);width:300px;height:300px;border-radius:50%;background:var(--mustard);color:#fff;
    display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:Fredoka;box-shadow:0 26px 40px -16px rgba(169,118,27,.75);border:8px solid #fff">
-   <div style="font-size:30px;font-weight:500;letter-spacing:2px">2 FOR</div><div style="font-size:120px;font-weight:600;line-height:.9">$89</div>
+   <div style="font-size:30px;font-weight:500;letter-spacing:2px">2 FOR</div><div style="font-size:84px;font-weight:600;line-height:.95">$89.99</div>
    <div style="font-size:23px;font-weight:500">mix &amp; match</div></div>
  </div>
- <div style="font-size:28px;font-weight:700;color:var(--muted);margin-top:30px">Single mat <b style="color:var(--coral)">$39.99</b> launch price <s>$49.99</s></div>
- {cta_block("Get the bundle")}
+ <div style="font-size:28px;font-weight:700;color:var(--muted);margin-top:30px">Single mat <b style="color:var(--coral)">$49.99</b> · the 2-pack saves $9.99</div>
+ {cta_block("DM to get the bundle")}
 </div>
 {dino(right=-40, bottom=210, w=190, bubble="Best deal!", bpos="tr", bstyle="right:40px;top:-66px")}''')))
     return s
@@ -507,9 +508,12 @@ if __name__ == "__main__":
     for f in os.listdir(BUILD):
         os.remove(os.path.join(BUILD, f))
     manifest = []
-    for key, fn in [("A", A), ("B", B), ("C", C), ("D", D)]:
+    import more
+    for key, fn in [("A", A), ("B", B), ("C", C), ("D", D)] + more.ALL:
         for i, (slug, inner) in enumerate(fn(), 1):
-            for ratio, size in [("r45", "1080x1350"), ("r916", "1080x1920")]:
+            # 4:5 is rendered from HTML; the 1080x1920 version is composited by story.py so every
+            # word sits inside the IG Reels / TikTok safe box (x 40-900, y 320-1400)
+            for ratio, size in [("r45", "1080x1350")]:
                 name = f"{key}{i:02d}-{slug}"
                 path = os.path.join(BUILD, f"{name}.{ratio}.html")
                 open(path, "w").write(doc(inner, ratio))
