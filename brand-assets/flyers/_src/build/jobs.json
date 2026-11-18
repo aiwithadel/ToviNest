@@ -1,0 +1,26 @@
+[
+ {
+  "html": "/home/user/ToviNest/brand-assets/flyers/_src/build/classroom-flyer.html",
+  "name": "tovinest-classroom-flyer",
+  "w": 1200,
+  "h": 1600
+ },
+ {
+  "html": "/home/user/ToviNest/brand-assets/flyers/_src/build/classroom-banner.html",
+  "name": "tovinest-classroom-banner",
+  "w": 1200,
+  "h": 780
+ },
+ {
+  "html": "/home/user/ToviNest/brand-assets/flyers/_src/build/clinic-flyer.html",
+  "name": "tovinest-clinic-flyer",
+  "w": 1200,
+  "h": 1600
+ },
+ {
+  "html": "/home/user/ToviNest/brand-assets/flyers/_src/build/clinic-banner.html",
+  "name": "tovinest-clinic-banner",
+  "w": 1200,
+  "h": 780
+ }
+]
