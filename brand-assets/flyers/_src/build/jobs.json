@@ -88,5 +88,53 @@
   "name": "tovinest-b2b-5-music-classes",
   "w": 1500,
   "h": 975
+ },
+ {
+  "html": "/home/user/ToviNest/brand-assets/flyers/_src/build/social-en-1-hero.html",
+  "name": "tovinest-social-en-1-hero",
+  "w": 1080,
+  "h": 1080
+ },
+ {
+  "html": "/home/user/ToviNest/brand-assets/flyers/_src/build/social-en-2-rainboho.html",
+  "name": "tovinest-social-en-2-rainboho",
+  "w": 1080,
+  "h": 1080
+ },
+ {
+  "html": "/home/user/ToviNest/brand-assets/flyers/_src/build/social-en-3-ash-starlight.html",
+  "name": "tovinest-social-en-3-ash-starlight",
+  "w": 1080,
+  "h": 1080
+ },
+ {
+  "html": "/home/user/ToviNest/brand-assets/flyers/_src/build/social-en-4-how-to-order.html",
+  "name": "tovinest-social-en-4-how-to-order",
+  "w": 1080,
+  "h": 1080
+ },
+ {
+  "html": "/home/user/ToviNest/brand-assets/flyers/_src/build/social-ar-1-hero.html",
+  "name": "tovinest-social-ar-1-hero",
+  "w": 1080,
+  "h": 1080
+ },
+ {
+  "html": "/home/user/ToviNest/brand-assets/flyers/_src/build/social-ar-2-rainboho.html",
+  "name": "tovinest-social-ar-2-rainboho",
+  "w": 1080,
+  "h": 1080
+ },
+ {
+  "html": "/home/user/ToviNest/brand-assets/flyers/_src/build/social-ar-3-ash-starlight.html",
+  "name": "tovinest-social-ar-3-ash-starlight",
+  "w": 1080,
+  "h": 1080
+ },
+ {
+  "html": "/home/user/ToviNest/brand-assets/flyers/_src/build/social-ar-4-how-to-order.html",
+  "name": "tovinest-social-ar-4-how-to-order",
+  "w": 1080,
+  "h": 1080
  }
 ]

@@ -1,0 +1,52 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:"Fredoka";src:url("../fonts/Fredoka.woff2") format("woff2");font-weight:300 700}
+@font-face{font-family:"Nunito";src:url("../fonts/Nunito.woff2") format("woff2");font-weight:200 1000}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#FBF4EA}
+.f{position:relative;overflow:hidden;font-family:Nunito,sans-serif;color:#3B2A1C;background:#FBF4EA}
+.f h1,.f h2,.f .disp{font-family:Fredoka,sans-serif;font-weight:600;letter-spacing:-.015em}
+.f em{font-style:normal;color:#62794F}
+.blob{position:absolute;border-radius:50%;filter:blur(2px)}
+.paper{position:absolute;inset:0;background:
+ radial-gradient(900px 700px at -10% -10%,rgba(233,166,161,.28),transparent 60%),
+ radial-gradient(900px 800px at 110% 110%,rgba(122,143,106,.24),transparent 60%),
+ radial-gradient(600px 500px at 105% 20%,rgba(233,176,65,.14),transparent 60%)}
+.tag{display:inline-flex;align-items:center;gap:10px;font-weight:800;font-size:19px;letter-spacing:.14em;text-transform:uppercase;color:#4E6444;
+ border:2px solid rgba(78,100,68,.35);border-radius:999px;padding:10px 22px;background:rgba(255,255,255,.55)}
+.eyebrow{font-weight:800;font-size:19px;letter-spacing:.16em;text-transform:uppercase;color:#C2573B}
+.card{position:absolute;border-radius:34px;overflow:hidden;background:#fff;border:10px solid #fff;box-shadow:0 40px 70px -34px rgba(59,42,28,.55)}
+.card img{width:100%;height:100%;object-fit:cover;display:block;border-radius:24px}
+.lbl{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);background:rgba(255,255,255,.95);border-radius:999px;padding:10px 24px;
+ font-family:Fredoka,sans-serif;font-weight:600;font-size:26px;white-space:nowrap;box-shadow:0 12px 24px -12px rgba(59,42,28,.45)}
+.char{position:absolute;filter:drop-shadow(0 26px 22px rgba(59,42,28,.28))}
+.spec{display:flex;align-items:center;gap:14px;font-weight:800;font-size:23px;color:#3B2A1C}
+.spec .i{width:58px;height:58px;border-radius:18px;display:grid;place-items:center;flex:none}
+.rule{height:2px;background:linear-gradient(90deg,transparent,rgba(59,42,28,.18),transparent)}
+.stripe{position:absolute;left:0;right:0;height:12px;display:flex}
+.stripe i{flex:1}
+
+@font-face{font-family:"Cairo";src:url("../fonts/Cairo-arabic.woff2") format("woff2");font-weight:200 1000;unicode-range:U+0600-06FF,U+0750-077F,U+08A0-08FF,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+.f{width:1080px;height:1080px}
+.ar{direction:rtl;font-family:Cairo,Nunito,sans-serif}
+.ar h1,.ar .disp{font-family:Cairo,Fredoka,sans-serif;font-weight:800;letter-spacing:0}
+.ar .eyebrow,.ar .tag{letter-spacing:0;text-transform:none}
+.ttl{font-family:Fredoka,sans-serif;font-weight:600;letter-spacing:-.02em;line-height:1.02}
+.ar .ttl{font-family:Cairo,sans-serif;font-weight:800;line-height:1.25}
+.chip{background:#fff;border-radius:999px;padding:10px 18px;font-weight:800;font-size:22px;box-shadow:0 10px 24px -16px rgba(59,42,28,.5);white-space:nowrap}
+.pr{font-family:Fredoka,sans-serif;font-weight:700;letter-spacing:-.02em;direction:ltr;unicode-bidi:isolate}
+.ltr{direction:ltr;unicode-bidi:isolate}
+</style></head><body><div class="f en" lang="en"><div class="paper"></div><div class="stripe" style="top:0"><i style="background:#7A8F6A"></i><i style="background:#E9B041"></i><i style="background:#E9A6A1"></i><i style="background:#7AA3BD"></i><i style="background:#7A8F6A"></i></div>
+<img src="../img/logo.png" style="position:absolute;left:60px;top:40px;height:100px">
+<span class="tag" style="position:absolute;right:60px;top:66px;font-size:17px;padding:9px 18px">Ships across the USA</span>
+
+<div style="position:absolute;left:60px;right:60px;top:170px;text-align:center">
+ <div class="eyebrow" style="font-size:18px">Moon Walkers Premium EVA Playmat</div>
+ <h1 class="ttl" style="font-size:78px;margin-top:8px">Soft playmats<br>for <em>little ones</em></h1>
+ <div style="font-size:26px;font-weight:700;color:#6B5A4B;margin-top:10px">Big 67 × 48 in mat · two beautiful designs</div>
+</div>
+<div class="card" style="left:120px;top:500px;width:420px;height:330px;transform:rotate(-4deg)"><img src="../img/flatlay-rainboho.jpg"><span class="lbl">RainBoho</span></div>
+<div class="card" style="left:540px;top:480px;width:420px;height:330px;transform:rotate(3.5deg)"><img src="../img/flatlay-ash-starlight.jpg"><span class="lbl">Ash Starlight</span></div>
+<img class="char" src="../img/dino.png" style="left:10px;top:660px;width:160px">
+<img class="char" src="../img/dima.png" style="right:14px;top:670px;width:142px">
+<div style="position:absolute;left:0;right:0;top:880px;text-align:center"><div style="display:flex;align-items:baseline;gap:14px;justify-content:center"><span class="pr" style="font-size:66px">$49.99</span><span style="font-size:26px;font-weight:800;color:#A0907F">reg. <s class="ltr">$79.99</s></span></div>
+ <div style="font-size:26px;font-weight:800;margin-top:4px">Shop at <span class="ltr" style="color:#C2573B">tovinest.com</span></div></div><div class="stripe" style="bottom:0"><i style="background:#7A8F6A"></i><i style="background:#E9B041"></i><i style="background:#E9A6A1"></i><i style="background:#7AA3BD"></i><i style="background:#7A8F6A"></i></div></div></body></html>

@@ -57,3 +57,9 @@ Every flyer has the same footer: "Moon Walkers Premium EVA Playmat · CPC/CPSIA 
 There is an @2x PNG (3000×1950) of each for attachments.
 
 To rebuild, run `cd _src && python3 b2b41.py && node render.js && python3 post.py`.
+
+## Facebook groups and Marketplace (square 1080×1080, English and Arabic)
+
+`tovinest-social-{en,ar}-{1-hero,2-rainboho,3-ash-starlight,4-how-to-order}-share.jpg`
+
+To rebuild, run `cd _src && python3 social.py && node render.js && python3 post.py`. The Arabic version uses the Cairo font (`fonts/Cairo-*.woff2`, OFL).
