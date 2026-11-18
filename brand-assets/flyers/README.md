@@ -63,3 +63,11 @@ To rebuild, run `cd _src && python3 b2b41.py && node render.js && python3 post.p
 `tovinest-social-{en,ar}-{1-hero,2-rainboho,3-ash-starlight,4-how-to-order}-share.jpg`
 
 To rebuild, run `cd _src && python3 social.py && node render.js && python3 post.py`. The Arabic version uses the Cairo font (`fonts/Cairo-*.woff2`, OFL).
+
+## Feature close-ups (1080×1080)
+
+`tovinest-feature-{1-dense-eva,2-wipe-clean,3-interlocking,4-sixteen-tiles}-share.jpg`
+
+These are 3D illustrations whose tile tops use the real mat surface. They are not photos, and they don't show test results. Replace them with real close-up photos when those exist.
+
+To rebuild, run `cd _src && python3 features.py && node render.js && python3 post.py`.

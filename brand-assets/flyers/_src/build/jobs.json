@@ -142,5 +142,29 @@
   "name": "tovinest-compare-eva-vs-folding",
   "w": 1200,
   "h": 1550
+ },
+ {
+  "html": "/home/user/ToviNest/brand-assets/flyers/_src/build/feature-1-dense-eva.html",
+  "name": "tovinest-feature-1-dense-eva",
+  "w": 1080,
+  "h": 1080
+ },
+ {
+  "html": "/home/user/ToviNest/brand-assets/flyers/_src/build/feature-2-wipe-clean.html",
+  "name": "tovinest-feature-2-wipe-clean",
+  "w": 1080,
+  "h": 1080
+ },
+ {
+  "html": "/home/user/ToviNest/brand-assets/flyers/_src/build/feature-3-interlocking.html",
+  "name": "tovinest-feature-3-interlocking",
+  "w": 1080,
+  "h": 1080
+ },
+ {
+  "html": "/home/user/ToviNest/brand-assets/flyers/_src/build/feature-4-sixteen-tiles.html",
+  "name": "tovinest-feature-4-sixteen-tiles",
+  "w": 1080,
+  "h": 1080
  }
 ]
