@@ -1,0 +1,72 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:"Fredoka";src:url("../fonts/Fredoka.woff2") format("woff2");font-weight:300 700}
+@font-face{font-family:"Nunito";src:url("../fonts/Nunito.woff2") format("woff2");font-weight:200 1000}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#FBF4EA}
+.f{position:relative;overflow:hidden;font-family:Nunito,sans-serif;color:#3B2A1C;background:#FBF4EA}
+.f h1,.f h2,.f .disp{font-family:Fredoka,sans-serif;font-weight:600;letter-spacing:-.015em}
+.f em{font-style:normal;color:#62794F}
+.blob{position:absolute;border-radius:50%;filter:blur(2px)}
+.paper{position:absolute;inset:0;background:
+ radial-gradient(900px 700px at -10% -10%,rgba(233,166,161,.28),transparent 60%),
+ radial-gradient(900px 800px at 110% 110%,rgba(122,143,106,.24),transparent 60%),
+ radial-gradient(600px 500px at 105% 20%,rgba(233,176,65,.14),transparent 60%)}
+.tag{display:inline-flex;align-items:center;gap:10px;font-weight:800;font-size:19px;letter-spacing:.14em;text-transform:uppercase;color:#4E6444;
+ border:2px solid rgba(78,100,68,.35);border-radius:999px;padding:10px 22px;background:rgba(255,255,255,.55)}
+.eyebrow{font-weight:800;font-size:19px;letter-spacing:.16em;text-transform:uppercase;color:#C2573B}
+.card{position:absolute;border-radius:34px;overflow:hidden;background:#fff;border:10px solid #fff;box-shadow:0 40px 70px -34px rgba(59,42,28,.55)}
+.card img{width:100%;height:100%;object-fit:cover;display:block;border-radius:24px}
+.lbl{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);background:rgba(255,255,255,.95);border-radius:999px;padding:10px 24px;
+ font-family:Fredoka,sans-serif;font-weight:600;font-size:26px;white-space:nowrap;box-shadow:0 12px 24px -12px rgba(59,42,28,.45)}
+.char{position:absolute;filter:drop-shadow(0 26px 22px rgba(59,42,28,.28))}
+.spec{display:flex;align-items:center;gap:14px;font-weight:800;font-size:23px;color:#3B2A1C}
+.spec .i{width:58px;height:58px;border-radius:18px;display:grid;place-items:center;flex:none}
+.rule{height:2px;background:linear-gradient(90deg,transparent,rgba(59,42,28,.18),transparent)}
+.stripe{position:absolute;left:0;right:0;height:12px;display:flex}
+.stripe i{flex:1}
+
+.row{display:grid;grid-template-columns:250px 1fr 1fr;border-top:2px solid rgba(59,42,28,.08)}
+.row>div{padding:18px 22px;font-size:21px;font-weight:700;line-height:1.35;display:flex;gap:12px;align-items:flex-start}
+.row .k{font-weight:900;font-size:17px;letter-spacing:.1em;text-transform:uppercase;color:#8C7A6B;align-items:center}
+.row .us{background:rgba(227,233,218,.55);color:#3B2A1C}
+.row .them{color:#6B5A4B}
+.ok,.mid{flex:none;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;margin-top:1px}
+.ok{background:#4E6444;color:#fff}.mid{background:#EADFD2;color:#8C7A6B}
+.why{background:#fff;border-radius:26px;padding:22px 24px;box-shadow:0 18px 40px -28px rgba(59,42,28,.5)}
+.why h3{font-family:Fredoka,sans-serif;font-weight:600;font-size:27px;margin-top:10px;line-height:1.1}
+.why p{font-size:18px;font-weight:600;color:#6B5A4B;line-height:1.4;margin-top:6px}
+</style></head><body><div class="f" style="width:1200px;height:1550px"><div class="paper"></div><div class="stripe" style="top:0"><i style="background:#7A8F6A"></i><i style="background:#E9B041"></i><i style="background:#E9A6A1"></i><i style="background:#7AA3BD"></i><i style="background:#7A8F6A"></i></div>
+<img src="../img/logo.png" style="position:absolute;left:70px;top:50px;height:104px">
+<span class="tag" style="position:absolute;right:70px;top:80px;font-size:16px">For classrooms &amp; childcare</span>
+<div style="position:absolute;left:70px;top:190px;width:660px">
+ <div class="eyebrow" style="font-size:18px">Moon Walkers Premium EVA Playmat</div>
+ <h1 style="font-size:62px;line-height:1.04;margin-top:10px">Why we chose <em>interlocking EVA</em> tiles</h1>
+ <p style="font-size:23px;font-weight:600;color:#6B5A4B;line-height:1.45;margin-top:14px">Not all foam mats are the same. Here's how our tiles compare with a typical folding foam mat.</p>
+</div>
+<div class="card" style="left:800px;top:180px;width:330px;height:260px;transform:rotate(4deg);border-width:8px"><img src="../img/flatlay-ash-starlight.jpg"></div>
+<img class="char" src="../img/dino.png" style="left:745px;top:330px;width:120px">
+<div style="position:absolute;left:60px;right:60px;top:500px;background:#fff;border-radius:30px;overflow:hidden;box-shadow:0 26px 50px -30px rgba(59,42,28,.5)">
+ <div class="row" style="border-top:0"><div></div>
+  <div style="background:#4E6444;color:#FBF4EA;font-family:Fredoka,sans-serif;font-weight:600;font-size:25px">Tovi Nest interlocking EVA</div>
+  <div style="background:#F1E9DF;font-family:Fredoka,sans-serif;font-weight:600;font-size:25px;color:#6B5A4B">Typical folding foam mat</div></div>
+ <div class="row"><div class="k">Material</div>
+<div class="us"><span class="ok"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>EVA foam: dense, closed-cell, bounces back</div>
+<div class="them"><span class="mid"><svg viewBox="0 0 24 24" width="16" height="16"><circle cx="12" cy="12" r="4" fill="currentColor"/></svg></span>Varies by brand (often XPE or PE foam). Check the label</div></div><div class="row"><div class="k">Thickness</div>
+<div class="us"><span class="ok"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>0.5 in cushion across every tile</div>
+<div class="them"><span class="mid"><svg viewBox="0 0 24 24" width="16" height="16"><circle cx="12" cy="12" r="4" fill="currentColor"/></svg></span>Varies by brand. Ask for the spec</div></div><div class="row"><div class="k">If one spot wears out</div>
+<div class="us"><span class="ok"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>Swap out just that tile</div>
+<div class="them"><span class="mid"><svg viewBox="0 0 24 24" width="16" height="16"><circle cx="12" cy="12" r="4" fill="currentColor"/></svg></span>The whole mat is one piece</div></div><div class="row"><div class="k">Size &amp; shape</div>
+<div class="us"><span class="ok"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>16 tiles · 67 × 48 in. Rearrange or link mats for a bigger area</div>
+<div class="them"><span class="mid"><svg viewBox="0 0 24 24" width="16" height="16"><circle cx="12" cy="12" r="4" fill="currentColor"/></svg></span>One fixed size</div></div><div class="row"><div class="k">Cleaning</div>
+<div class="us"><span class="ok"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>Wipe-clean surface</div>
+<div class="them"><span class="ok"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>Wipe-clean surface</div></div><div class="row"><div class="k">Storage</div>
+<div class="us"><span class="ok"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>Tiles stack flat</div>
+<div class="them"><span class="ok"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>Folds up quickly</div></div><div class="row"><div class="k">Safety testing</div>
+<div class="us"><span class="ok"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>CPC / CPSIA tested · 0+</div>
+<div class="them"><span class="mid"><svg viewBox="0 0 24 24" width="16" height="16"><circle cx="12" cy="12" r="4" fill="currentColor"/></svg></span>Ask the seller for a CPC</div></div>
+</div>
+<div style="position:absolute;left:60px;right:60px;top:1165px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px"><div class="why"><span style="width:56px;height:56px;border-radius:18px;display:grid;place-items:center;background:#DDE9F1;color:#3F6A85"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.2c3 4 6 7.4 6 10.9a6 6 0 0 1-12 0c0-3.5 3-6.9 6-10.9z"/></svg></span><h3>Not sponge foam</h3><p>Closed-cell EVA doesn't soak up spills the way open-cell sponge foam does. Just wipe it.</p></div><div class="why"><span style="width:56px;height:56px;border-radius:18px;display:grid;place-items:center;background:#E3E9DA;color:#4E6444"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="7.5" height="7.5" rx="1.5"/><rect x="13" y="3.5" width="7.5" height="7.5" rx="1.5"/><rect x="3.5" y="13" width="7.5" height="7.5" rx="1.5"/><rect x="13" y="13" width="7.5" height="7.5" rx="1.5"/></svg></span><h3>Built to be fixed</h3><p>Interlocking tiles mean a worn or damaged spot is a one-tile fix, not a new mat.</p></div><div class="why"><span style="width:56px;height:56px;border-radius:18px;display:grid;place-items:center;background:#F6E7C2;color:#94681A"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4l9 4.8-9 4.8-9-4.8z"/><path d="M3 13.6l9 4.8 9-4.8"/></svg></span><h3>Grows with the room</h3><p>Reshape it for circle time, a reading nook or a baby corner. Add a second mat for more space.</p></div></div>
+<div style="position:absolute;left:70px;right:70px;bottom:34px;display:flex;justify-content:space-between;align-items:center;font-weight:800;font-size:20px">
+ <span style="display:flex;gap:24px"><span style="display:flex;gap:8px;align-items:center"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="2.5"/><path d="M3.5 7l8.5 6 8.5-6"/></svg>hello@tovinest.com</span><span style="display:flex;gap:8px;align-items:center"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.6 2.6 2.6 14.4 0 17M12 3.5c-2.6 2.6-2.6 14.4 0 17"/></svg>tovinest.com/catalog</span></span>
+ <span style="font-size:15px;font-weight:700;color:#8C7A6B">Always supervise children during play.</span></div>
+<div class="stripe" style="bottom:0"><i style="background:#7A8F6A"></i><i style="background:#E9B041"></i><i style="background:#E9A6A1"></i><i style="background:#7AA3BD"></i><i style="background:#7A8F6A"></i></div></div></body></html>
