@@ -41,3 +41,19 @@ Before printing:
 - Replace `XXXX-XXXX-XXXX-XXXX` with a real Shopify gift-card code.
 
 Volume pricing is "ask us": no numbers are invented.
+
+## B2B outreach (41 contacts): 5 audience flyers, 1500×975
+
+| # | File | Audience |
+|---|---|---|
+| 1 | `tovinest-b2b-1-hospitals-email.jpg` | Hospitals & maternity units |
+| 2 | `tovinest-b2b-2-foundations-email.jpg` | Hospital foundations, ladies boards, auxiliaries |
+| 3 | `tovinest-b2b-3-dentists-email.jpg` | Pediatric dentists |
+| 4 | `tovinest-b2b-4-kids-gyms-email.jpg` | Kids gyms & play spaces |
+| 5 | `tovinest-b2b-5-music-classes-email.jpg` | Kids music classes |
+
+Every flyer has the same footer: "Moon Walkers Premium EVA Playmat · CPC/CPSIA tested · tovinest.com/catalog". That link currently redirects to the wholesale catalog PDF.
+
+There is an @2x PNG (3000×1950) of each for attachments.
+
+To rebuild, run `cd _src && python3 b2b41.py && node render.js && python3 post.py`.

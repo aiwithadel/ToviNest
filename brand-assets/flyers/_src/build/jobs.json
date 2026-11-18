@@ -58,5 +58,35 @@
   "name": "tovinest-gift-card-back",
   "w": 1400,
   "h": 1000
+ },
+ {
+  "html": "/home/user/ToviNest/brand-assets/flyers/_src/build/b2b-1-hospitals.html",
+  "name": "tovinest-b2b-1-hospitals",
+  "w": 1500,
+  "h": 975
+ },
+ {
+  "html": "/home/user/ToviNest/brand-assets/flyers/_src/build/b2b-2-foundations.html",
+  "name": "tovinest-b2b-2-foundations",
+  "w": 1500,
+  "h": 975
+ },
+ {
+  "html": "/home/user/ToviNest/brand-assets/flyers/_src/build/b2b-3-dentists.html",
+  "name": "tovinest-b2b-3-dentists",
+  "w": 1500,
+  "h": 975
+ },
+ {
+  "html": "/home/user/ToviNest/brand-assets/flyers/_src/build/b2b-4-kids-gyms.html",
+  "name": "tovinest-b2b-4-kids-gyms",
+  "w": 1500,
+  "h": 975
+ },
+ {
+  "html": "/home/user/ToviNest/brand-assets/flyers/_src/build/b2b-5-music-classes.html",
+  "name": "tovinest-b2b-5-music-classes",
+  "w": 1500,
+  "h": 975
  }
 ]

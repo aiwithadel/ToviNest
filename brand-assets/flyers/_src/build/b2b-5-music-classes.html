@@ -1,0 +1,66 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:"Fredoka";src:url("../fonts/Fredoka.woff2") format("woff2");font-weight:300 700}
+@font-face{font-family:"Nunito";src:url("../fonts/Nunito.woff2") format("woff2");font-weight:200 1000}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#FBF4EA}
+.f{position:relative;overflow:hidden;font-family:Nunito,sans-serif;color:#3B2A1C;background:#FBF4EA}
+.f h1,.f h2,.f .disp{font-family:Fredoka,sans-serif;font-weight:600;letter-spacing:-.015em}
+.f em{font-style:normal;color:#62794F}
+.blob{position:absolute;border-radius:50%;filter:blur(2px)}
+.paper{position:absolute;inset:0;background:
+ radial-gradient(900px 700px at -10% -10%,rgba(233,166,161,.28),transparent 60%),
+ radial-gradient(900px 800px at 110% 110%,rgba(122,143,106,.24),transparent 60%),
+ radial-gradient(600px 500px at 105% 20%,rgba(233,176,65,.14),transparent 60%)}
+.tag{display:inline-flex;align-items:center;gap:10px;font-weight:800;font-size:19px;letter-spacing:.14em;text-transform:uppercase;color:#4E6444;
+ border:2px solid rgba(78,100,68,.35);border-radius:999px;padding:10px 22px;background:rgba(255,255,255,.55)}
+.eyebrow{font-weight:800;font-size:19px;letter-spacing:.16em;text-transform:uppercase;color:#C2573B}
+.card{position:absolute;border-radius:34px;overflow:hidden;background:#fff;border:10px solid #fff;box-shadow:0 40px 70px -34px rgba(59,42,28,.55)}
+.card img{width:100%;height:100%;object-fit:cover;display:block;border-radius:24px}
+.lbl{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);background:rgba(255,255,255,.95);border-radius:999px;padding:10px 24px;
+ font-family:Fredoka,sans-serif;font-weight:600;font-size:26px;white-space:nowrap;box-shadow:0 12px 24px -12px rgba(59,42,28,.45)}
+.char{position:absolute;filter:drop-shadow(0 26px 22px rgba(59,42,28,.28))}
+.spec{display:flex;align-items:center;gap:14px;font-weight:800;font-size:23px;color:#3B2A1C}
+.spec .i{width:58px;height:58px;border-radius:18px;display:grid;place-items:center;flex:none}
+.rule{height:2px;background:linear-gradient(90deg,transparent,rgba(59,42,28,.18),transparent)}
+.stripe{position:absolute;left:0;right:0;height:12px;display:flex}
+.stripe i{flex:1}
+
+.f{width:1500px;height:975px}
+.tagp{display:inline-block;font-weight:900;font-size:19px;letter-spacing:.14em;text-transform:uppercase;border-radius:999px;padding:10px 20px}
+.ttl{font-family:Fredoka,sans-serif;font-weight:600;letter-spacing:-.02em;line-height:1.0;color:#3B2A1C}
+.sub{font-size:27px;line-height:1.4;font-weight:700;color:#5E4D3E}
+.chip{background:#fff;border-radius:999px;padding:10px 18px;font-weight:800;font-size:20px;color:#3B2A1C;box-shadow:0 10px 24px -16px rgba(59,42,28,.5)}
+.floor{position:absolute;transform-origin:50% 100%;border-radius:30px;overflow:hidden;
+ box-shadow:0 14px 0 #E6DACB,0 60px 80px -30px rgba(59,42,28,.55)}
+.floor img{width:100%;height:100%;object-fit:cover;display:block}
+.ch{position:absolute;filter:drop-shadow(0 24px 18px rgba(59,42,28,.3))}
+.sh{position:absolute;border-radius:50%;background:radial-gradient(closest-side,rgba(59,42,28,.32),transparent)}
+.prop{position:absolute;filter:drop-shadow(0 18px 16px rgba(59,42,28,.28))}
+.foot{position:absolute;left:0;right:0;bottom:0;height:92px;background:#4E6444;color:#FBF4EA;display:flex;align-items:center;justify-content:center;
+ font-weight:800;font-size:27px;letter-spacing:.01em}
+.foot b{color:#F3C66B;font-weight:900}
+</style></head><body><div class="f"><div class="paper"></div><div style="position:absolute;left:640px;top:-120px;width:1000px;height:1000px;border-radius:50%;background:radial-gradient(closest-side,#F7DEDA,rgba(251,244,234,0))"></div>
+<img src="../img/logo.png" style="position:absolute;left:70px;top:44px;height:112px">
+<div style="position:absolute;left:70px;top:200px;width:720px;z-index:8">
+ <span class="tagp" style="background:#F7DEDA;color:#A9544B">Kids music classes</span>
+ <h1 class="ttl" style="font-size:76px;margin-top:22px">Where Little<br>Musicians <em>Gather</em></h1>
+ <p class="sub" style="margin-top:22px">A soft, wipe-clean floor for circle time, songs and shakers.</p>
+ <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:30px"><span class="chip">16 tiles · 67 × 48 in</span><span class="chip">0.5 in soft EVA</span><span class="chip">Wipe-clean</span></div>
+</div>
+<div style="position:absolute;inset:0;transform:scale(.93);transform-origin:100% 88%"><div class="floor" style="left:700px;top:300px;width:780px;height:540px;transform:perspective(1300px) rotateX(54deg)"><img src="../img/mat-ash.jpg"></div><div class="sh" style="left:855px;top:736px;width:220px;height:46px;z-index:2"></div><img class="ch" src="../img/dima.png" style="left:820px;top:300px;width:290px;transform:rotate(0deg);z-index:3"><div style="position:absolute;left:990px;top:470px;z-index:5;"><svg viewBox="0 0 100 100" width="170" height="170" style="transform:rotate(-20deg)">
+<circle cx="50" cy="50" r="42" fill="#FBF4EA"/><circle cx="50" cy="50" r="42" fill="none" stroke="#4E6444" stroke-width="10"/>
+<circle cx="50" cy="50" r="30" fill="none" stroke="#E9A6A1" stroke-width="2" stroke-dasharray="3 5"/><g transform="rotate(0 50 50)"><rect x="44" y="4" width="12" height="9" rx="2" fill="#4E6444"/><circle cx="50" cy="8.5" r="5" fill="#F3C66B" stroke="#C89530" stroke-width="1.5"/></g><g transform="rotate(45 50 50)"><rect x="44" y="4" width="12" height="9" rx="2" fill="#4E6444"/><circle cx="50" cy="8.5" r="5" fill="#F3C66B" stroke="#C89530" stroke-width="1.5"/></g><g transform="rotate(90 50 50)"><rect x="44" y="4" width="12" height="9" rx="2" fill="#4E6444"/><circle cx="50" cy="8.5" r="5" fill="#F3C66B" stroke="#C89530" stroke-width="1.5"/></g><g transform="rotate(135 50 50)"><rect x="44" y="4" width="12" height="9" rx="2" fill="#4E6444"/><circle cx="50" cy="8.5" r="5" fill="#F3C66B" stroke="#C89530" stroke-width="1.5"/></g><g transform="rotate(180 50 50)"><rect x="44" y="4" width="12" height="9" rx="2" fill="#4E6444"/><circle cx="50" cy="8.5" r="5" fill="#F3C66B" stroke="#C89530" stroke-width="1.5"/></g><g transform="rotate(225 50 50)"><rect x="44" y="4" width="12" height="9" rx="2" fill="#4E6444"/><circle cx="50" cy="8.5" r="5" fill="#F3C66B" stroke="#C89530" stroke-width="1.5"/></g><g transform="rotate(270 50 50)"><rect x="44" y="4" width="12" height="9" rx="2" fill="#4E6444"/><circle cx="50" cy="8.5" r="5" fill="#F3C66B" stroke="#C89530" stroke-width="1.5"/></g><g transform="rotate(315 50 50)"><rect x="44" y="4" width="12" height="9" rx="2" fill="#4E6444"/><circle cx="50" cy="8.5" r="5" fill="#F3C66B" stroke="#C89530" stroke-width="1.5"/></g></svg></div><div style="position:absolute;left:1170px;top:560px;z-index:4;"><svg viewBox="0 0 100 90" width="170" height="153">
+<path d="M8 22v44c0 10 19 18 42 18s42-8 42-18V22" fill="#E9A6A1"/>
+<path d="M8 66c0 10 19 18 42 18s42-8 42-18v-6c0 10-19 18-42 18S8 70 8 60z" fill="#F3C66B"/>
+<path d="M12 30l13 46 13-48 12 50 12-50 13 48 13-46" fill="none" stroke="#fff" stroke-width="3" stroke-linejoin="round" opacity=".9"/>
+<ellipse cx="50" cy="22" rx="42" ry="14" fill="#FBF4EA" stroke="#F3C66B" stroke-width="6"/></svg></div><div style="position:absolute;left:1330px;top:520px;z-index:4;"><svg viewBox="0 0 100 90" width="130" height="117">
+<path d="M8 22v44c0 10 19 18 42 18s42-8 42-18V22" fill="#7AA3BD"/>
+<path d="M8 66c0 10 19 18 42 18s42-8 42-18v-6c0 10-19 18-42 18S8 70 8 60z" fill="#FBF4EA"/>
+<path d="M12 30l13 46 13-48 12 50 12-50 13 48 13-46" fill="none" stroke="#fff" stroke-width="3" stroke-linejoin="round" opacity=".9"/>
+<ellipse cx="50" cy="22" rx="42" ry="14" fill="#FBF4EA" stroke="#FBF4EA" stroke-width="6"/></svg></div><div style="position:absolute;left:730px;top:620px;z-index:4;"><svg viewBox="0 0 100 90" width="120" height="108">
+<path d="M8 22v44c0 10 19 18 42 18s42-8 42-18V22" fill="#E9B041"/>
+<path d="M8 66c0 10 19 18 42 18s42-8 42-18v-6c0 10-19 18-42 18S8 70 8 60z" fill="#4E6444"/>
+<path d="M12 30l13 46 13-48 12 50 12-50 13 48 13-46" fill="none" stroke="#fff" stroke-width="3" stroke-linejoin="round" opacity=".9"/>
+<ellipse cx="50" cy="22" rx="42" ry="14" fill="#FBF4EA" stroke="#4E6444" stroke-width="6"/></svg></div><div style="position:absolute;left:1110px;top:190px;z-index:2;"><svg viewBox="0 0 40 40" width="70" height="70"><path d="M14 30V8l22-5v22" fill="none" stroke="#4E6444" stroke-width="3.6" stroke-linecap="round"/><path d="M14 8l22-5v6L14 14z" fill="#4E6444"/><ellipse cx="9.5" cy="30.5" rx="6" ry="4.8" fill="#4E6444" transform="rotate(-20 9.5 30.5)"/><ellipse cx="31.5" cy="25.5" rx="6" ry="4.8" fill="#4E6444" transform="rotate(-20 31.5 25.5)"/></svg></div><div style="position:absolute;left:1290px;top:300px;z-index:2;"><svg viewBox="0 0 30 40" width="45" height="60"><path d="M14 31V4c4 3 11 5 11 13" fill="none" stroke="#C2573B" stroke-width="3.6" stroke-linecap="round"/><ellipse cx="9" cy="31.5" rx="6.5" ry="5" fill="#C2573B" transform="rotate(-20 9 31.5)"/></svg></div><div style="position:absolute;left:760px;top:220px;z-index:2;"><svg viewBox="0 0 30 40" width="40" height="54"><path d="M14 31V4c4 3 11 5 11 13" fill="none" stroke="#7AA3BD" stroke-width="3.6" stroke-linecap="round"/><ellipse cx="9" cy="31.5" rx="6.5" ry="5" fill="#7AA3BD" transform="rotate(-20 9 31.5)"/></svg></div><div style="position:absolute;left:1380px;top:160px;z-index:2;"><svg viewBox="0 0 40 40" width="48" height="48"><path d="M14 30V8l22-5v22" fill="none" stroke="#E9B041" stroke-width="3.6" stroke-linecap="round"/><path d="M14 8l22-5v6L14 14z" fill="#E9B041"/><ellipse cx="9.5" cy="30.5" rx="6" ry="4.8" fill="#E9B041" transform="rotate(-20 9.5 30.5)"/><ellipse cx="31.5" cy="25.5" rx="6" ry="4.8" fill="#E9B041" transform="rotate(-20 31.5 25.5)"/></svg></div><div style="position:absolute;left:1010px;top:120px;z-index:2;"><svg viewBox="0 0 24 24" width="30" height="30"><path d="M12 0c1 7 5 11 12 12-7 1-11 5-12 12-1-7-5-11-12-12 7-1 11-5 12-12z" fill="#E9B041"/></svg></div></div>
+<div class="foot" style="z-index:9">Moon Walkers Premium EVA Playmat<span style="opacity:.5;margin:0 16px">·</span>CPC/CPSIA tested<span style="opacity:.5;margin:0 16px">·</span><b>tovinest.com/catalog</b></div>
+</div></body></html>

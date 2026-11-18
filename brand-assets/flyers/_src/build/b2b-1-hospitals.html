@@ -1,0 +1,58 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:"Fredoka";src:url("../fonts/Fredoka.woff2") format("woff2");font-weight:300 700}
+@font-face{font-family:"Nunito";src:url("../fonts/Nunito.woff2") format("woff2");font-weight:200 1000}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#FBF4EA}
+.f{position:relative;overflow:hidden;font-family:Nunito,sans-serif;color:#3B2A1C;background:#FBF4EA}
+.f h1,.f h2,.f .disp{font-family:Fredoka,sans-serif;font-weight:600;letter-spacing:-.015em}
+.f em{font-style:normal;color:#62794F}
+.blob{position:absolute;border-radius:50%;filter:blur(2px)}
+.paper{position:absolute;inset:0;background:
+ radial-gradient(900px 700px at -10% -10%,rgba(233,166,161,.28),transparent 60%),
+ radial-gradient(900px 800px at 110% 110%,rgba(122,143,106,.24),transparent 60%),
+ radial-gradient(600px 500px at 105% 20%,rgba(233,176,65,.14),transparent 60%)}
+.tag{display:inline-flex;align-items:center;gap:10px;font-weight:800;font-size:19px;letter-spacing:.14em;text-transform:uppercase;color:#4E6444;
+ border:2px solid rgba(78,100,68,.35);border-radius:999px;padding:10px 22px;background:rgba(255,255,255,.55)}
+.eyebrow{font-weight:800;font-size:19px;letter-spacing:.16em;text-transform:uppercase;color:#C2573B}
+.card{position:absolute;border-radius:34px;overflow:hidden;background:#fff;border:10px solid #fff;box-shadow:0 40px 70px -34px rgba(59,42,28,.55)}
+.card img{width:100%;height:100%;object-fit:cover;display:block;border-radius:24px}
+.lbl{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);background:rgba(255,255,255,.95);border-radius:999px;padding:10px 24px;
+ font-family:Fredoka,sans-serif;font-weight:600;font-size:26px;white-space:nowrap;box-shadow:0 12px 24px -12px rgba(59,42,28,.45)}
+.char{position:absolute;filter:drop-shadow(0 26px 22px rgba(59,42,28,.28))}
+.spec{display:flex;align-items:center;gap:14px;font-weight:800;font-size:23px;color:#3B2A1C}
+.spec .i{width:58px;height:58px;border-radius:18px;display:grid;place-items:center;flex:none}
+.rule{height:2px;background:linear-gradient(90deg,transparent,rgba(59,42,28,.18),transparent)}
+.stripe{position:absolute;left:0;right:0;height:12px;display:flex}
+.stripe i{flex:1}
+
+.f{width:1500px;height:975px}
+.tagp{display:inline-block;font-weight:900;font-size:19px;letter-spacing:.14em;text-transform:uppercase;border-radius:999px;padding:10px 20px}
+.ttl{font-family:Fredoka,sans-serif;font-weight:600;letter-spacing:-.02em;line-height:1.0;color:#3B2A1C}
+.sub{font-size:27px;line-height:1.4;font-weight:700;color:#5E4D3E}
+.chip{background:#fff;border-radius:999px;padding:10px 18px;font-weight:800;font-size:20px;color:#3B2A1C;box-shadow:0 10px 24px -16px rgba(59,42,28,.5)}
+.floor{position:absolute;transform-origin:50% 100%;border-radius:30px;overflow:hidden;
+ box-shadow:0 14px 0 #E6DACB,0 60px 80px -30px rgba(59,42,28,.55)}
+.floor img{width:100%;height:100%;object-fit:cover;display:block}
+.ch{position:absolute;filter:drop-shadow(0 24px 18px rgba(59,42,28,.3))}
+.sh{position:absolute;border-radius:50%;background:radial-gradient(closest-side,rgba(59,42,28,.32),transparent)}
+.prop{position:absolute;filter:drop-shadow(0 18px 16px rgba(59,42,28,.28))}
+.foot{position:absolute;left:0;right:0;bottom:0;height:92px;background:#4E6444;color:#FBF4EA;display:flex;align-items:center;justify-content:center;
+ font-weight:800;font-size:27px;letter-spacing:.01em}
+.foot b{color:#F3C66B;font-weight:900}
+</style></head><body><div class="f"><div class="paper"></div><div style="position:absolute;left:640px;top:-120px;width:1000px;height:1000px;border-radius:50%;background:radial-gradient(closest-side,#F7DEDA,rgba(251,244,234,0))"></div>
+<img src="../img/logo.png" style="position:absolute;left:70px;top:44px;height:112px">
+<div style="position:absolute;left:70px;top:200px;width:720px;z-index:8">
+ <span class="tagp" style="background:#F7DEDA;color:#A9544B">Hospitals &amp; maternity units</span>
+ <h1 class="ttl" style="font-size:76px;margin-top:22px">A Welcome Gift<br>for Every <em>New Family</em></h1>
+ <p class="sub" style="margin-top:22px">Send every family home with a soft, beautiful playmat for baby’s first months.</p>
+ <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:30px"><span class="chip">16 tiles · 67 × 48 in</span><span class="chip">0.5 in soft EVA</span><span class="chip">Wipe-clean</span></div>
+</div>
+<div style="position:absolute;inset:0;transform:scale(.93);transform-origin:100% 88%"><div class="floor" style="left:700px;top:300px;width:780px;height:540px;transform:perspective(1300px) rotateX(54deg)"><img src="../img/mat-rainboho.jpg"></div><div class="sh" style="left:796px;top:781px;width:228px;height:48px;z-index:2"></div><img class="ch" src="../img/dima.png" style="left:760px;top:330px;width:300px;transform:rotate(0deg);z-index:3"><div style="position:absolute;left:1070px;top:470px;z-index:4;"><svg viewBox="0 0 100 86" width="280" height="241" style="transform:rotate(0deg)">
+<path d="M50 20c-6-12-22-16-24-7-2 8 14 9 24 7zM50 20c6-12 22-16 24-7 2 8-14 9-24 7z" fill="none" stroke="#4E6444" stroke-width="5" stroke-linejoin="round"/>
+<rect x="10" y="34" width="80" height="50" rx="5" fill="#E9A6A1"/>
+<rect x="10" y="34" width="80" height="8" fill="#000" opacity=".07"/>
+<rect x="5" y="20" width="90" height="17" rx="4" fill="#F2B9B4"/>
+<rect x="5" y="20" width="90" height="17" rx="4" fill="#fff" opacity=".18"/>
+<rect x="44" y="20" width="12" height="64" fill="#4E6444"/></svg></div><div style="position:absolute;left:1188px;top:452px;z-index:6;transform:rotate(6deg)"><svg width="80" height="70" style="position:absolute;left:-58px;top:-44px"><path d="M4 4C30 10 50 30 72 58" fill="none" stroke="#4E6444" stroke-width="3"/></svg><div style="background:#fff;border-radius:16px;padding:14px 22px 14px 30px;box-shadow:0 18px 30px -18px rgba(59,42,28,.6);position:relative;font-family:Fredoka,sans-serif;font-weight:600;font-size:30px;color:#3B2A1C;line-height:1.05;white-space:nowrap"><span style="position:absolute;left:10px;top:50%;width:10px;height:10px;margin-top:-5px;border-radius:50%;background:#E9A6A1"></span>Welcome,<br><span style="color:#C2573B">little one</span> ♡</div></div><div style="position:absolute;left:1110px;top:150px;z-index:2;"><svg viewBox="0 0 24 24" width="54" height="54"><path d="M12 21s-8-5-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 6-8 11-8 11z" fill="#E9A6A1"/></svg></div><div style="position:absolute;left:1220px;top:220px;z-index:2;"><svg viewBox="0 0 24 24" width="34" height="34"><path d="M12 21s-8-5-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 6-8 11-8 11z" fill="#F2B9B4"/></svg></div><div style="position:absolute;left:1010px;top:210px;z-index:2;"><svg viewBox="0 0 24 24" width="34" height="34"><path d="M12 0c1 7 5 11 12 12-7 1-11 5-12 12-1-7-5-11-12-12 7-1 11-5 12-12z" fill="#E9B041"/></svg></div><div style="position:absolute;left:1380px;top:330px;z-index:2;"><svg viewBox="0 0 24 24" width="26" height="26"><path d="M12 0c1 7 5 11 12 12-7 1-11 5-12 12-1-7-5-11-12-12 7-1 11-5 12-12z" fill="#7AA3BD"/></svg></div></div>
+<div class="foot" style="z-index:9">Moon Walkers Premium EVA Playmat<span style="opacity:.5;margin:0 16px">·</span>CPC/CPSIA tested<span style="opacity:.5;margin:0 16px">·</span><b>tovinest.com/catalog</b></div>
+</div></body></html>
