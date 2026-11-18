@@ -1,0 +1,81 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:"Fredoka";src:url("../fonts/Fredoka.woff2") format("woff2");font-weight:300 700}
+@font-face{font-family:"Nunito";src:url("../fonts/Nunito.woff2") format("woff2");font-weight:200 1000}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#FBF4EA}
+.f{position:relative;overflow:hidden;font-family:Nunito,sans-serif;color:#3B2A1C;background:#FBF4EA}
+.f h1,.f h2,.f .disp{font-family:Fredoka,sans-serif;font-weight:600;letter-spacing:-.015em}
+.f em{font-style:normal;color:#62794F}
+.blob{position:absolute;border-radius:50%;filter:blur(2px)}
+.paper{position:absolute;inset:0;background:
+ radial-gradient(900px 700px at -10% -10%,rgba(233,166,161,.28),transparent 60%),
+ radial-gradient(900px 800px at 110% 110%,rgba(122,143,106,.24),transparent 60%),
+ radial-gradient(600px 500px at 105% 20%,rgba(233,176,65,.14),transparent 60%)}
+.tag{display:inline-flex;align-items:center;gap:10px;font-weight:800;font-size:19px;letter-spacing:.14em;text-transform:uppercase;color:#4E6444;
+ border:2px solid rgba(78,100,68,.35);border-radius:999px;padding:10px 22px;background:rgba(255,255,255,.55)}
+.eyebrow{font-weight:800;font-size:19px;letter-spacing:.16em;text-transform:uppercase;color:#C2573B}
+.card{position:absolute;border-radius:34px;overflow:hidden;background:#fff;border:10px solid #fff;box-shadow:0 40px 70px -34px rgba(59,42,28,.55)}
+.card img{width:100%;height:100%;object-fit:cover;display:block;border-radius:24px}
+.lbl{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);background:rgba(255,255,255,.95);border-radius:999px;padding:10px 24px;
+ font-family:Fredoka,sans-serif;font-weight:600;font-size:26px;white-space:nowrap;box-shadow:0 12px 24px -12px rgba(59,42,28,.45)}
+.char{position:absolute;filter:drop-shadow(0 26px 22px rgba(59,42,28,.28))}
+.spec{display:flex;align-items:center;gap:14px;font-weight:800;font-size:23px;color:#3B2A1C}
+.spec .i{width:58px;height:58px;border-radius:18px;display:grid;place-items:center;flex:none}
+.rule{height:2px;background:linear-gradient(90deg,transparent,rgba(59,42,28,.18),transparent)}
+.stripe{position:absolute;left:0;right:0;height:12px;display:flex}
+.stripe i{flex:1}
+
+.price{font-family:Fredoka,sans-serif;font-weight:700;letter-spacing:-.02em}
+.step{display:flex;gap:16px;align-items:flex-start}
+.step b.n{flex:none;width:46px;height:46px;border-radius:50%;background:#C2573B;color:#fff;display:grid;place-items:center;
+ font-family:Fredoka,sans-serif;font-weight:600;font-size:25px}
+.step .t{font-family:Fredoka,sans-serif;font-weight:600;font-size:27px;line-height:1.15}
+.step .s{font-size:19px;font-weight:600;color:#6B5A4B;margin-top:2px}
+</style></head><body><div class="f" style="width:1080px;height:1920px"><div class="paper"></div><div class="stripe" style="top:0"><i style="background:#7A8F6A"></i><i style="background:#E9B041"></i><i style="background:#E9A6A1"></i><i style="background:#7AA3BD"></i><i style="background:#7A8F6A"></i></div>
+<div style="position:absolute;inset:0;top:90px"><div style="position:absolute;left:64px;right:64px;top:44px;display:flex;justify-content:space-between;align-items:center">
+ <img src="../img/logo.png" style="height:104px">
+ <span class="tag" style="font-size:16px;padding:9px 18px"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 6.5h11v9h-11z"/><path d="M13.5 9.5h4l3 3v3h-7z"/><circle cx="6.5" cy="17" r="1.8"/><circle cx="17" cy="17" r="1.8"/></svg> Ships across the USA</span>
+</div>
+<div style="position:absolute;left:64px;right:64px;top:176px;text-align:center">
+ <div class="eyebrow" style="font-size:18px">Moon Walkers Premium EVA Playmat</div>
+ <h1 style="font-size:80px;line-height:1.02;margin-top:10px">A soft, beautiful<br>play space <em>for little ones</em></h1>
+</div></div>
+<div style="position:absolute;left:0;right:0;top:520px;height:440px">
+ <div class="card" style="left:90px;top:24px;width:470px;height:360px;transform:rotate(-4deg)"><img src="../img/flatlay-rainboho.jpg"><span class="lbl">RainBoho</span></div>
+<div class="card" style="left:520px;top:0px;width:470px;height:360px;transform:rotate(3.5deg)"><img src="../img/flatlay-ash-starlight.jpg"><span class="lbl">Ash Starlight</span></div>
+ <img class="char" src="../img/dino.png" style="left:4px;top:210px;width:180px">
+ <img class="char" src="../img/dima.png" style="right:6px;top:222px;width:160px">
+</div>
+<div style="position:absolute;left:64px;right:64px;top:1040px"><div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px 26px"><div class="spec" style="font-size:20px"><span class="i" style="background:#E3E9DA;color:#4E6444"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="7.5" height="7.5" rx="1.5"/><rect x="13" y="3.5" width="7.5" height="7.5" rx="1.5"/><rect x="3.5" y="13" width="7.5" height="7.5" rx="1.5"/><rect x="13" y="13" width="7.5" height="7.5" rx="1.5"/></svg></span>16 interlocking tiles</div><div class="spec" style="font-size:20px"><span class="i" style="background:#F6E7C2;color:#94681A"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="8" width="19" height="8" rx="1.6"/><path d="M6.2 8v3M9.4 8v4.2M12.6 8v3M15.8 8v4.2M19 8v3"/></svg></span>67 × 48 in · 5.6 × 4 ft</div><div class="spec" style="font-size:20px"><span class="i" style="background:#F7DEDA;color:#A9544B"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4l9 4.8-9 4.8-9-4.8z"/><path d="M3 13.6l9 4.8 9-4.8"/></svg></span>0.5 in soft EVA</div><div class="spec" style="font-size:20px"><span class="i" style="background:#DDE9F1;color:#3F6A85"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.2c3 4 6 7.4 6 10.9a6 6 0 0 1-12 0c0-3.5 3-6.9 6-10.9z"/></svg></span>Wipe-clean top</div><div class="spec" style="font-size:20px"><span class="i" style="background:#E3E9DA;color:#4E6444"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 17h16"/><path d="M6 13l2 4M10 13l2 4M14 13l2 4"/><rect x="4" y="6" width="16" height="7" rx="2"/></svg></span>Non-slip</div><div class="spec" style="font-size:20px"><span class="i" style="background:#F6E7C2;color:#94681A"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.6-7 9-4-1.4-7-4.5-7-9V6z"/><path d="M8.6 12.2l2.4 2.4 4.4-4.8"/></svg></span>CPC / CPSIA tested</div></div></div>
+<div style="position:absolute;left:64px;right:64px;top:1220px"><div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+ <div style="background:#fff;border-radius:28px;padding:20px 26px;box-shadow:0 18px 40px -28px rgba(59,42,28,.5)">
+  <div class="eyebrow" style="font-size:16px;color:#4E6444">One playmat</div>
+  <div style="display:flex;align-items:baseline;gap:12px;margin-top:2px"><span class="price" style="font-size:62px">$49.99</span>
+   <s style="font-size:26px;font-weight:700;color:#A0907F">$79.99</s></div>
+  <div style="font-size:18px;font-weight:700;color:#6B5A4B">RainBoho or Ash Starlight</div>
+ </div>
+ <div style="background:#4E6444;color:#FBF4EA;border-radius:28px;padding:20px 26px;position:relative">
+  <span style="position:absolute;top:-14px;right:20px;background:#E9B041;color:#3B2A1C;font-weight:900;font-size:15px;letter-spacing:.1em;
+   text-transform:uppercase;border-radius:999px;padding:6px 14px">Best value</span>
+  <div class="eyebrow" style="font-size:16px;color:#F3C66B">2-Pack</div>
+  <div class="price" style="font-size:62px;margin-top:2px">$89.99</div>
+  <div style="font-size:18px;font-weight:700;color:#DCE5D3">Two RainBoho · Two Ash Starlight · or Mix</div>
+ </div>
+</div></div>
+<div style="position:absolute;left:64px;right:64px;top:1450px"><div style="background:#fff;border-radius:34px;padding:28px 30px;display:flex;gap:30px;align-items:center;
+ box-shadow:0 26px 50px -30px rgba(59,42,28,.5)">
+ <div style="flex:1;display:flex;flex-direction:column;gap:16px">
+  <div class="disp" style="font-size:36px">How to order</div><div class="step"><b class="n">1</b><div><div class="t">Scan the code or visit <span style='color:#C2573B'>tovinest.com</span></div><div class="s">Opens our online store</div></div></div><div class="step"><b class="n">2</b><div><div class="t">Pick your design</div><div class="s">RainBoho, Ash Starlight, or a 2-pack</div></div></div><div class="step"><b class="n">3</b><div><div class="t">Check out online</div><div class="s">Ships across the USA</div></div></div>
+ </div>
+ <div style="flex:none;text-align:center">
+  <div style="width:210px;height:210px;padding:14px;border-radius:24px;background:#FBF4EA;border:3px solid #E9B041"><svg style="width:100%;height:100%" width="250" height="250" class="segno"><path transform="scale(10)" class="qrline" stroke="#3b2a1c" d="M0 0.5h7m1 0h1m3 0h3m3 0h7m-25 1h1m5 0h1m1 0h1m2 0h3m4 0h1m5 0h1m-25 1h1m1 0h3m1 0h1m4 0h1m2 0h1m1 0h1m1 0h1m1 0h3m1 0h1m-25 1h1m1 0h3m1 0h1m2 0h3m1 0h1m1 0h2m1 0h1m1 0h3m1 0h1m-25 1h1m1 0h3m1 0h1m2 0h1m1 0h3m4 0h1m1 0h3m1 0h1m-25 1h1m5 0h1m4 0h1m1 0h2m3 0h1m5 0h1m-25 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-15 1h1m3 0h1m1 0h1m-16 1h1m4 0h3m1 0h1m1 0h6m5 0h2m-25 1h1m1 0h1m2 0h1m1 0h1m1 0h1m1 0h1m1 0h3m3 0h5m-24 1h9m1 0h2m2 0h4m3 0h1m1 0h2m-22 1h1m3 0h1m1 0h1m4 0h2m1 0h1m1 0h1m1 0h1m2 0h1m-25 1h2m2 0h1m1 0h1m6 0h3m2 0h1m5 0h1m-25 1h3m2 0h1m1 0h2m2 0h1m1 0h1m1 0h3m1 0h1m3 0h1m-24 1h1m3 0h4m2 0h2m3 0h7m1 0h2m-25 1h1m4 0h1m1 0h3m3 0h1m5 0h1m1 0h2m1 0h1m-25 1h1m1 0h1m1 0h1m1 0h1m4 0h3m1 0h6m1 0h1m-15 1h1m1 0h3m1 0h1m1 0h1m3 0h1m-21 1h7m1 0h1m2 0h2m3 0h1m1 0h1m1 0h1m3 0h1m-25 1h1m5 0h1m3 0h1m3 0h3m3 0h1m3 0h1m-25 1h1m1 0h3m1 0h1m2 0h1m1 0h1m1 0h1m1 0h6m1 0h3m-25 1h1m1 0h3m1 0h1m5 0h2m3 0h2m4 0h2m-25 1h1m1 0h3m1 0h1m6 0h2m1 0h1m4 0h2m1 0h1m-25 1h1m5 0h1m1 0h1m2 0h1m1 0h1m2 0h1m2 0h2m3 0h1m-25 1h7m4 0h1m1 0h2m1 0h1m1 0h1m2 0h1m2 0h1"/></svg></div>
+  <div style="font-weight:900;font-size:16px;letter-spacing:.12em;text-transform:uppercase;color:#C2573B;margin-top:10px">Scan to shop</div>
+ </div>
+</div></div>
+<div style="position:absolute;left:0;right:0;bottom:60px"><div style="position:absolute;left:64px;right:64px;bottom:0;display:flex;justify-content:space-between;align-items:center;
+ font-weight:800;font-size:19px">
+ <span style="display:flex;gap:18px"><span style="display:flex;gap:8px;align-items:center"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.6 2.6 2.6 14.4 0 17M12 3.5c-2.6 2.6-2.6 14.4 0 17"/></svg>tovinest.com</span>
+ <span style="display:flex;gap:8px;align-items:center"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="2.5"/><path d="M3.5 7l8.5 6 8.5-6"/></svg>hello@tovinest.com</span></span>
+ <span style="font-size:15px;font-weight:700;color:#8C7A6B">Always supervise children during play.</span>
+</div></div>
+<div class="stripe" style="bottom:0"><i style="background:#7A8F6A"></i><i style="background:#E9B041"></i><i style="background:#E9A6A1"></i><i style="background:#7AA3BD"></i><i style="background:#7A8F6A"></i></div></div></body></html>

@@ -22,5 +22,17 @@
   "name": "tovinest-clinic-banner",
   "w": 1200,
   "h": 780
+ },
+ {
+  "html": "/home/user/ToviNest/brand-assets/flyers/_src/build/community-feed.html",
+  "name": "tovinest-community-feed",
+  "w": 1080,
+  "h": 1350
+ },
+ {
+  "html": "/home/user/ToviNest/brand-assets/flyers/_src/build/community-story.html",
+  "name": "tovinest-community-story",
+  "w": 1080,
+  "h": 1920
  }
 ]

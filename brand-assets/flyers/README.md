@@ -15,3 +15,15 @@ Rules followed:
 - No carton photos.
 - Only official Dino and Dima images and real flat-lays.
 - No safety guarantees; the footer says "Always supervise children during play."
+
+## Flyer for parent and community groups
+
+| File | Use |
+|---|---|
+| `tovinest-community-feed-share.jpg` (4:5) | Facebook and WhatsApp groups, and posts. |
+| `tovinest-community-story-share.jpg` (9:16) | Status and stories. |
+| `tovinest-community-*@2x.png` | Print master. |
+
+Ordering is online only, at tovinest.com. The QR code leads to https://tovinest.com.
+
+To rebuild, run `cd _src && python3 community.py && node render.js && python3 post.py`. This needs `pip install segno`.
