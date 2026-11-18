@@ -34,5 +34,29 @@
   "name": "tovinest-community-story",
   "w": 1080,
   "h": 1920
+ },
+ {
+  "html": "/home/user/ToviNest/brand-assets/flyers/_src/build/gift-program-flyer.html",
+  "name": "tovinest-gift-program-flyer",
+  "w": 1200,
+  "h": 1600
+ },
+ {
+  "html": "/home/user/ToviNest/brand-assets/flyers/_src/build/gift-program-banner.html",
+  "name": "tovinest-gift-program-banner",
+  "w": 1200,
+  "h": 780
+ },
+ {
+  "html": "/home/user/ToviNest/brand-assets/flyers/_src/build/gift-card-front.html",
+  "name": "tovinest-gift-card-front",
+  "w": 1400,
+  "h": 1000
+ },
+ {
+  "html": "/home/user/ToviNest/brand-assets/flyers/_src/build/gift-card-back.html",
+  "name": "tovinest-gift-card-back",
+  "w": 1400,
+  "h": 1000
  }
 ]

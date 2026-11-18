@@ -27,3 +27,17 @@ Rules followed:
 Ordering is online only, at tovinest.com. The QR code leads to https://tovinest.com.
 
 To rebuild, run `cd _src && python3 community.py && node render.js && python3 post.py`. This needs `pip install segno`.
+
+## Gift-a-Mat program: outreach to practices
+
+| File | Use |
+|---|---|
+| `tovinest-gift-program-flyer-email.jpg` (1200×1600) | Inline in an outreach email to pediatricians, dentists, OB/GYN, therapy and childcare. |
+| `tovinest-gift-program-banner-email.jpg` (1200×780) | Short header for the email. |
+| `tovinest-gift-card-front@2x.png` / `-back@2x.png` (7×5 in at about 400 dpi) | Printable gift card, front and back. |
+
+Before printing:
+- Replace "Your Practice Name" in `_src/gift.py` (`card_front_inner(..., practice=...)`).
+- Replace `XXXX-XXXX-XXXX-XXXX` with a real Shopify gift-card code.
+
+Volume pricing is "ask us": no numbers are invented.
